@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2018_05_29_101724) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "colleges", force: :cascade do |t|
     t.string "address"
@@ -61,6 +64,7 @@ ActiveRecord::Schema.define(version: 2018_05_29_101724) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 
   add_foreign_key "colleges", "schools"
   add_foreign_key "primaires", "schools"
