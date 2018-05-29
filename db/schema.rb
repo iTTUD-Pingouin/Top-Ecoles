@@ -10,13 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2018_05_29_101724) do
-
+ActiveRecord::Schema.define(version: 2018_05_29_114410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "colleges", force: :cascade do |t|
     t.string "address"
@@ -27,6 +24,17 @@ ActiveRecord::Schema.define(version: 2018_05_29_101724) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_colleges_on_school_id"
+  end
+
+  create_table "lycees", force: :cascade do |t|
+    t.string "address"
+    t.integer "total_fees"
+    t.bigint "school_id"
+    t.text "sections", default: [], array: true
+    t.text "options", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_lycees_on_school_id"
   end
 
   create_table "primaires", force: :cascade do |t|
@@ -65,7 +73,7 @@ ActiveRecord::Schema.define(version: 2018_05_29_101724) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
   add_foreign_key "colleges", "schools"
+  add_foreign_key "lycees", "schools"
   add_foreign_key "primaires", "schools"
 end
