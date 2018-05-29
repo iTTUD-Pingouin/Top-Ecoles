@@ -1,1 +1,9 @@
 // Specific CSS for your home-page
+.home-wrapper {
+  background-image: asset-url('university.jpg');
+  height: 100vh;
+  color: white;
+  h1 {
+    margin: 0;
+  }
+}
