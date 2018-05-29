@@ -3,8 +3,9 @@
 
   <ul>
     <% @schools.each do |school| %>
-      <li><%= school.name %></li>
-
+      <%= link_to school_path(school) do  %>
+        <li><%= school.name %></li>
+      <% end %>
     <% end %>
   </ul>
 </div>
