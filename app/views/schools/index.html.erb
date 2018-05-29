@@ -1,0 +1,11 @@
+<div class="container">
+  <h1> Toutes les Ecoles !</h1>
+
+  <ul>
+    <% @schools.each do |school| %>
+      <li><%= school.name %></li>
+
+    <% end %>
+  </ul>
+</div>
+
