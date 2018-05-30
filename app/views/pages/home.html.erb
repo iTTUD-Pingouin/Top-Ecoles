@@ -1,21 +1,58 @@
 
 <div class="home-wrapper">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-
-
-  <%= form_tag("/schools", method: "get") do %>
-    <div class="form-group">
-      <%= label_tag(:college, "Collège") %>
-      <%= check_box_tag(:college) %>
-      <%= label_tag(:lycee, "Lycée") %>
-      <%= check_box_tag(:lycee) %>
+  <div class="image">
+  </div>
+  <div class="container" id="logo">
+    TopEcoles
+  </div>
+  <div class="container">
+    <div class="row w-margin">
+      <div class="tabs col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="tabs-item">
+          <h3>
+            Primaire
+          </h3>
+          <p>10384</p>
+        </div>
+        <div class="tabs-item active">
+          <h3>
+            Collége
+          </h3>
+          <p>2072</p>
+        </div>
+        <div class="tabs-item">
+          <h3>
+            Lycée
+          </h3>
+          <p>1094</p>
+        </div>
+        <div class="tabs-item">
+          <h3>
+            Prépa
+          </h3>
+          <p>203</p>
+        </div>
+        <div class="tabs-item">
+          <h3>
+            BTS
+          </h3>
+          <p>234</p>
+        </div>
+        <div class="tabs-item">
+          <h3>
+            Fac
+          </h3>
+          <p>874</p>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <%= label_tag(:commune, "Commune :") %>
-      <%= text_field_tag(:commune) %>
+    <div class="row">
+      <form class="form-inline col-xs-12 col-sm-8 col-sm-offset-2 login-form">
+        <div class="input-group search-container">
+          <input type="text" class="form-control search-bar" placeholder="Rechercher par nom du lycée, du collége, de l'école">
+        </div>
+      </form>
     </div>
-    <%= submit_tag("Search") %>
-  <% end %>
+  </div>
 </div>
 
