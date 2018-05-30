@@ -8,6 +8,7 @@ class SchoolsController < ApplicationController
   end
 
   def selection
-
   end
+
+
 end

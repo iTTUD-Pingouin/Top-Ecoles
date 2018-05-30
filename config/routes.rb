@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :schools, only: [:index, :show] do
     collection do
       get "selection", to: "schools#selection"
+      get "test", to: "schools#parsing_sample_csv"
     end
   end
 end
