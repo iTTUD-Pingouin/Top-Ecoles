@@ -20,9 +20,9 @@ CSV.foreach(filepath, csv_options) do |row|
   school.save
 
   if row["type d'établissement"] == "Collège"
-    College.create!(address: row["adresse"], school_id: school.id, uai: row['code UAI'])
+    College.create!(address: row["adresse"], school_id: school.id, uai: row['code UAI'], commune: row['commune'])
   elsif row["type d'établissement"] == "Lycée"
-    Lycee.create!(address: row["adresse"], school_id: school.id, uai: row['code UAI'])
+    Lycee.create!(address: row["adresse"], school_id: school.id, uai: row['code UAI'], commune: row['commune'])
   end
 
 
