@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'csv'
+
+
+filepath = 'db/sampleschools.csv'
+csv_options = {col_sep: ';', headers: :first_row }
+
+
+
+puts "Parsing csv file ..."
+CSV.foreach(filepath, csv_options) do |row|
+  School.create!(name: row["nom"], commune: row["commune"], statut: row["statut"])
+end
+
+puts "Parsing over succesfully ! "
