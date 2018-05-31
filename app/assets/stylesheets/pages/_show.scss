@@ -32,4 +32,6 @@
   width:300px;
   margin-left:20px;
 }
-
+@media (max-width: 450px) {
+    .disappear { display: none; }
+}
