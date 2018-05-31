@@ -1,58 +1,64 @@
+<div class="home-wrapper-1">
+  <div class="home-logo">
+  <div class="home-logo-components">
+    <h1>Topecoles</h1>
+    <p>Your smart school search engine</p>
+  </div>
+  </div>
+</div>
 
-<div class="home-wrapper">
-  <div class="image">
-  </div>
-  <div class="container text-center" id="logo">
-    <h1 style="font-weight: bolder; font-size: 100px; position: relative; top: 200px">TopEcoles</h1>
-  </div>
+<div class="home-wrapper-2">
   <div class="container">
-    <div class="row w-margin">
-      <div class="tabs col-xs-12 col-sm-8 col-sm-offset-2">
-        <div class="tabs-item">
-          <h3>
-            Primaire
-          </h3>
-          <p>10384</p>
+    <div class="row">
+      <%= form_tag('/schools', method: :get )  do %>
+      <div class="col-xs-12 col-sm-2 col-sm-offset-2">
+
+        <div class="btn-group-toggle" >
+          <%= radio_button_tag 'type', "primaire", true %>
+          <%= label_tag :type_primaire, "Primaire" %>
         </div>
-        <div class="tabs-item active">
-          <h3>
-            Collége
-          </h3>
-          <p>2072</p>
+
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <div class="btn-group-toggle">
+          <%= radio_button_tag 'type', "college", true %>
+          <%= label_tag :type_college, "Collège" %>
         </div>
-        <div class="tabs-item">
-          <h3>
-            Lycée
-          </h3>
-          <p>1094</p>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <div class="btn-group-toggle">
+          <%= radio_button_tag 'type', "lycee", true%>
+          <%= label_tag :type_lycee, "Lycée"%>
         </div>
-        <div class="tabs-item">
-          <h3>
-            Prépa
-          </h3>
-          <p>203</p>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <div class="btn-group-toggle">
+          <%= radio_button_tag 'type', "sup", true%>
+          <%= label_tag :type_sup, "Ecole Sup"%>
         </div>
-        <div class="tabs-item">
-          <h3>
-            BTS
-          </h3>
-          <p>234</p>
-        </div>
-        <div class="tabs-item">
-          <h3>
-            Fac
-          </h3>
-          <p>874</p>
+      </div>
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="div-tft text-center">
+          <%= text_field_tag('city', nil, placeholder: 'Dans quelle ville cherchez-vous? Ex: Paris, Marseille ...', class:"form-control rounded-tft") %>
         </div>
       </div>
     </div>
-    <div class="row">
-      <form class="form-inline col-xs-12 col-sm-8 col-sm-offset-2 login-form">
-        <div class="input-group search-container">
-          <input type="text" class="form-control search-bar" placeholder="Rechercher par nom du lycée, du collége, de l'école">
-        </div>
-      </form>
-    </div>
+          <%= submit_tag 'Recherchez votre école !', class: "submit-home-button", id: "submit-search" %>
+    <% end %>
   </div>
 </div>
+
+
+
+
+<div class="home-wrapper-3">
+
+</div>
+
+
+
+
+
+
+
 

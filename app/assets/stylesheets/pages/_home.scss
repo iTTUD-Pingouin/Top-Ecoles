@@ -1,87 +1,113 @@
 // Specific CSS for your home-page
-.image {
-  background-image: linear-gradient(180deg, rgba(57, 93, 232, 0.9) 0%, rgba(86, 122, 226, 0.7) 50%), asset-url('board.jpg');
+
+.home-wrapper-1 {
+  height: 55vh;
+  background-image: asset-url('classroom.jpg');
   background-size: cover;
-  opacity: 0.8;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-
-
-
-.login-form {
-  background: white;
-  padding: 10px 20px;
-  border-radius: 0 0 10px 10px;
-  h2 {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  .btn {
-    background-color: blue;
-  }
-  .search-bar {
-    max-width: 100%;
-    padding-left: 45px;
-    // background-position: left 16px top calc(50% + 1px);
-    // box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
-    height: 54px;
-    border-radius:0px !important;
-    border-top: none;
-    border-left:none;
-    border-right: none;
-  }
-  .search-container{
-    display:flex;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 80px;
-  }
-}
-.w-margin{
-  margin-top: 300px;
-}
-.tabs{
-    background:#728FD9;
-    border-radius: 10px 10px 0 0;
-    color: white;
-    display:flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .home-logo {
+    background-color: $blue;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    display: flex;
     align-items: center;
-    margin-top: 40px;
-    padding-left:-15px;
+    justify-content: space-around;
+    box-shadow: 1px 1px 2px rgba(30,30,30,0.6)
   }
-.tabs h3{
-  font-size: 17px;
-}
-.tabs p {
-  opacity: 0.5;
-}
-.tabs-item {
-background:#728FD9;
-padding: 10px 10px 0px 10px;
-flex: 0 0 16.6666667%;
-text-align: center;
 }
 
-.tabs-item.active{
-  background: #1871B9;
-  color:white;
-  font-weight:bold;
+
+.home-logo {
+  position: relative;
+  h1 {
+    font-family: $logo-font;
+    font-size: 64px;
+    margin: 0;
+    color: $light-blue;
+    position: absolute;
+    top: 80px;
+    left: 30px;
+  }
+  p {
+    font-family: $logo-font;
+    font-size: 24px;
+    margin: 0;
+    position: absolute;
+    left: 50px;
+    top: 178px;
+    text-align: center;
+    width: 207px;
+    color: white;
+  }
 }
-.tabs-item:hover{
-  background: #1871B9;
-  color:white;
-  font-weight:bold;
+
+.btn-group-toggle {
+  input {
+    display: none;
+  }
+
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: lighter;
+    width: 90%;
+    font-size: 24px;
+    margin: 0;
+    height: 50px;
+    border: 1px solid rgba(30,30,30,0.3);
+    border-radius: 56px;
+    color: rgba(66, 66, 66, 0.6);
+  }
+
+  input:hover + label {
+    color: rgba(66, 66, 66, 0.8);
+  }
+
+  input:checked + label {
+    color: white;
+    background-color: $orange;
+    border: 0px solid rgba(30,30,30,0.3);
+    box-shadow: 1px 1px 3px rgba(30,30,30,0.7);
+  }
 }
-#logo {
-  color: white;
-  text-shadow: 1px 1px 2px #1871B9;
-  font-size: 90px;
+
+
+.to-bottom-30 {
+  margin-top: 30px;
+}
+
+.rounded-tft {
+  border-radius: 50px;
+  height: 50px;
+}
+
+.submit-home-button {
+  display: none;
+}
+
+
+.home-wrapper-2 {
+  background-color: white;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.row {
+  margin-top: -15px;
+}
+
+.div-tft {
+  margin-top: 58px;
 }
