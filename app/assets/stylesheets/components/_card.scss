@@ -1,0 +1,31 @@
+.card {
+  border: 3px solid blue;
+  height: 400px;
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 1.5px;
+}
+
+.add-button {
+  border: 1px solid black;
+  height: 20px;
+  width: 20px;
+  position: relative;
+}
+
+.card-description {
+  height: 150px;
+  width: auto;
+  position: relative;
+}
+
+.card-image {
+  background-image: asset-url("maison.jpg");
+  background-size: cover;
+  height: 200px;
+  width:100%;
+}
+
+#relative {
+  right: 20px;
+}
