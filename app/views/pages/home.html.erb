@@ -1,34 +1,60 @@
-<br>
+<div class="home-wrapper-1">
+  <div class="home-logo">
+  <div class="home-logo-components">
+    <h1>Topecoles</h1>
+    <p>Your smart school search engine</p>
+  </div>
+  </div>
+</div>
 
+<div class="home-wrapper-2">
+  <div class="container">
+    <div class="row">
+      <%= form_tag('/schools', method: :get )  do %>
+      <div class="col-xs-12 col-sm-2 col-sm-offset-2">
 
-<div class="container">
-  <%= form_tag('/schools', method: :get, class: 'text-center')  do %>
+        <div class="btn-group-toggle" >
+          <%= radio_button_tag 'type', "primaire", true %>
+          <%= label_tag :type_primaire, "Primaire" %>
+        </div>
 
-      <div class="btn-group-toggle">
-        <%= label_tag :checkbox, "Primaire" %>
-        <%= radio_button_tag 'type', "primaire", true %>
       </div>
-      <div class="btn-group-toggle">
-        <%= label_tag :checkbox, "Collège" %>
-        <%= radio_button_tag 'type', "college", true %>
+      <div class="col-xs-12 col-sm-2">
+        <div class="btn-group-toggle">
+          <%= radio_button_tag 'type', "college", true %>
+          <%= label_tag :type_college, "Collège" %>
+        </div>
       </div>
-      <div class="btn-group-toggle">
-        <%= label_tag :checkbox, "Lycée" %>
-        <%= radio_button_tag 'type', "lycee", true%>
+      <div class="col-xs-12 col-sm-2">
+        <div class="btn-group-toggle">
+          <%= radio_button_tag 'type', "lycee", true%>
+          <%= label_tag :type_lycee, "Lycée"%>
+        </div>
       </div>
-      <div class="btn-group-toggle">
-        <%= label_tag :checkbox, "Ecole Sup" %>
-        <%= radio_button_tag 'type', "sup", true%>
+      <div class="col-xs-12 col-sm-2">
+        <div class="btn-group-toggle">
+          <%= radio_button_tag 'type', "sup", true%>
+          <%= label_tag :type_sup, "Ecole Sup"%>
+        </div>
       </div>
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="div-tft text-center">
+          <%= text_field_tag('city', nil, placeholder: 'Dans quelle ville cherchez-vous? Ex: Paris, Marseille ...', class:"form-control rounded-tft") %>
+        </div>
+      </div>
+    </div>
+          <%= submit_tag 'Recherchez votre école !', class: "submit-home-button", id: "submit-search" %>
+    <% end %>
+  </div>
+</div>
 
 
-    <%= text_field_tag('city', nil, placeholder: 'Dans quelle ville cherchez-vous? Ex: Paris, Marseille ...', class:"form-control") %>
 
-    <br>
-    <%= submit_tag 'Recherchez votre école !', class: "btn btn-primary" %>
-  <% end %>
+
+<div class="home-wrapper-3">
 
 </div>
+
 
 
 
