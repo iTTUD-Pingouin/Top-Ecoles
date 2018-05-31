@@ -14,7 +14,11 @@
             </div>
             <div class="give-card-space">
               <div class="card-school-name">
-                <h2>Collège <%= school.name %></h2>
+                <% if school.name.length > 38 %>
+                  <h2>Collège <%= school.name[0..34] + "..." %></h2>
+                <% else %>
+                  <h2>Collège <%= school.name%></h2>
+                <% end %>
               </div>
 
               <div class="card-description">
@@ -49,7 +53,11 @@
             </div>
             <div class="give-card-space">
               <div class="card-school-name">
-                <h2>Lycée <%= school.name %></h2>
+                <% if school.name.length > 38 %>
+                  <h2>Collège <%= school.name[0..34] + "..." %></h2>
+                <% else %>
+                  <h2>Collège <%= school.name%></h2>
+                <% end %>
               </div>
 
               <div class="card-description">
