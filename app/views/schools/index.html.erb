@@ -13,20 +13,40 @@
   </ul>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="main-card">
+        <div class="card-image">
+          <div class="card-image-button">
+            <%= link_to schools_path do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="give-card-space">
+          <div class="card-school-name">
+            <h2>La Providence</h2>
+          </div>
 
-<div class="card">
-  <div class="card-image">
-
+          <div class="card-description">
+            <h5>Amiens</h5>
+            <p>Etablissement privee</p>
+            <ul class="list-inline">
+              <li class="li-active">Ecole</li>
+              <li>College</li>
+              <li>Lycee</li>
+              <li>Prepa</li>
+              <li>BTS</li>
+            </ul>
+          </div>
+          <div class="card-rating">
+            <%= link_to schools_path do %>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="add-button">
-
-  </div>
-
-  <div class="card-description">
-
-  </div>
-
-
 </div>
-

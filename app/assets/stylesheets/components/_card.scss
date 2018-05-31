@@ -1,31 +1,70 @@
-.card {
-  border: 3px solid blue;
-  height: 400px;
-  width: 300px;
-  margin: 0 auto;
-  border-radius: 1.5px;
-}
 
-.add-button {
-  border: 1px solid black;
-  height: 20px;
-  width: 20px;
+.main-card {
+ border: 0.2px black;
+ border-radius: 5px;
+ box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+ padding-bottom: 15px;
+}
+.card-image {
+  background-image: asset-url('university.jpg');
+  background-size: cover;
+  height: 200px;
   position: relative;
+  border-radius: 5px 5px 0 0;
+  .card-image-button {
+    position: absolute;
+    text-align: center;
+    a {
+      color: #F4F4F4;
+    }
+
+    bottom: -24px;
+    right: 19px;
+    font-size: 20px;
+    background: #424242;
+    padding: 10px;
+    border-radius: 300px;
+    width:49px;
+    opacity: 0.75;
+  }
+}
+.card-school-name {
+  h2 {
+    margin: 0;
+  }
+  padding: 20px 30px 0px 30px;
 }
 
 .card-description {
-  height: 150px;
-  width: auto;
-  position: relative;
+  padding:  11px 30px 19px 30px;
+  h5 {
+    opacity: 0.7;
+  }
 }
 
-.card-image {
-  background-image: asset-url("maison.jpg");
-  background-size: cover;
-  height: 200px;
-  width:100%;
+.card-description ul {
+  li {
+    opacity: 0.3;
+  }
+  .li-active {
+  opacity: 1;
+}
 }
 
-#relative {
-  right: 20px;
+.card-image-button:hover {
+  background-color: #F09000;
+  opacity: 1;
+}
+.card-rating {
+  text-align: center;
+
+  a {
+    color: #F09000;
+    height: 10px;
+  }
+}
+
+
+.give-card-space {
+  margin: 20px 0px;
 }
