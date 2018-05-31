@@ -1,58 +1,38 @@
+<br>
 
-<div class="home-wrapper">
-  <div class="image">
-  </div>
-  <div class="container text-center" id="logo">
-    <h1 style="font-weight: bolder; font-size: 100px; position: relative; top: 200px">TopEcoles</h1>
-  </div>
-  <div class="container">
-    <div class="row w-margin">
-      <div class="tabs col-xs-12 col-sm-8 col-sm-offset-2">
-        <div class="tabs-item">
-          <h3>
-            Primaire
-          </h3>
-          <p>10384</p>
-        </div>
-        <div class="tabs-item active">
-          <h3>
-            Collége
-          </h3>
-          <p>2072</p>
-        </div>
-        <div class="tabs-item">
-          <h3>
-            Lycée
-          </h3>
-          <p>1094</p>
-        </div>
-        <div class="tabs-item">
-          <h3>
-            Prépa
-          </h3>
-          <p>203</p>
-        </div>
-        <div class="tabs-item">
-          <h3>
-            BTS
-          </h3>
-          <p>234</p>
-        </div>
-        <div class="tabs-item">
-          <h3>
-            Fac
-          </h3>
-          <p>874</p>
-        </div>
+
+<div class="container">
+  <%= form_tag('/schools', method: :get, class: 'text-center')  do %>
+
+      <div class="btn-group-toggle">
+        <%= label_tag :checkbox, "Primaire" %>
+        <%= radio_button_tag 'type', "primaire", true %>
       </div>
-    </div>
-    <div class="row">
-      <form class="form-inline col-xs-12 col-sm-8 col-sm-offset-2 login-form">
-        <div class="input-group search-container">
-          <input type="text" class="form-control search-bar" placeholder="Rechercher par nom du lycée, du collége, de l'école">
-        </div>
-      </form>
-    </div>
-  </div>
+      <div class="btn-group-toggle">
+        <%= label_tag :checkbox, "Collège" %>
+        <%= radio_button_tag 'type', "college", true %>
+      </div>
+      <div class="btn-group-toggle">
+        <%= label_tag :checkbox, "Lycée" %>
+        <%= radio_button_tag 'type', "lycee", true%>
+      </div>
+      <div class="btn-group-toggle">
+        <%= label_tag :checkbox, "Ecole Sup" %>
+        <%= radio_button_tag 'type', "sup", true%>
+      </div>
+
+
+    <%= text_field_tag('city', nil, placeholder: 'Dans quelle ville cherchez-vous? Ex: Paris, Marseille ...', class:"form-control") %>
+
+    <br>
+    <%= submit_tag 'Recherchez votre école !', class: "btn btn-primary" %>
+  <% end %>
+
 </div>
+
+
+
+
+
+
 
