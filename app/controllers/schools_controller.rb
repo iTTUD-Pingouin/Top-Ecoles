@@ -7,9 +7,11 @@ class SchoolsController < ApplicationController
       "primaire.sections",
       # aggregats college
       "college.sections",
+      "college.statut",
       # aggregats lycee
       "lycee_filieres.name",
       "lycee.sections",
+      "lycee.statut",
       "lycee_filieres.mention_rate"
     )
 
@@ -28,10 +30,9 @@ class SchoolsController < ApplicationController
     case params[:type]
     when 'primaire'
       conditions[:has_primaire] = true
-      @aggregations = ["primaire.sections"]
     when 'college'
       conditions[:has_college] = true
-      @aggregations = ["college.sections"]
+      @aggregations = ["college.sections", "college.statut"]
     when 'lycee'
       conditions[:has_lycee] = true
 
@@ -43,6 +44,7 @@ class SchoolsController < ApplicationController
 
       @aggregations = {
         "lycee.sections" => { limit: 1000 },
+        "lycee.statut" => { limit: 1000 },
         "lycee_filieres.name" => { limit: 1000 },
         "lycee_filieres.mention_rate" => { ranges: rate_ranges },
       }
@@ -54,9 +56,17 @@ class SchoolsController < ApplicationController
       conditions["college.sections"] = params["college.sections"]
     end
 
+    if params["college.statut"].present?
+      conditions["college.statut"] = params["college.statut"]
+    end
+
     # Aggregats Lycée
     if params["lycee_filieres.name"].present?
       conditions["lycee_filieres.name"] = params["lycee_filieres.name"]
+    end
+
+    if params["lycee.statut"].present?
+      conditions["lycee.statut"] = params["lycee.statut"]
     end
 
     if params["lycee.sections"].present?

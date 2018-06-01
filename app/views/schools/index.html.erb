@@ -18,6 +18,22 @@
         <% end %>
       </ul>
     <% end %>
+
+    <% if @search.aggregations.key?("college.statut") %>
+      <h2>Statut</h2>
+      <% if @filters.key?("college.statut") %>
+        <%= link_to "toutes les statut", schools_path(@filters.merge("college.statut" => nil)) %>
+      <% end %>
+      <ul>
+        <% (@search.aggregations["college.statut"]["buckets"] || @search.aggregations["college.statut"]["college.statut"]["buckets"]).each do |filter| %>
+          <li>
+            <%= link_to schools_path(@filters.merge("college.statut" => filter["key"])) do %>
+              <%= filter["key"] %> (<%= filter["doc_count"] %>)
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
     <!------------------------ COLLEGE FILTERS  ------------>
 
 
@@ -73,6 +89,22 @@
         <% (@search.aggregations["lycee.sections"]["buckets"] || @search.aggregations["lycee.sections"]["lycee.sections"]["buckets"]).each do |filter| %>
           <li>
             <%= link_to schools_path(@filters.merge("lycee.sections" => filter["key"])) do %>
+              <%= filter["key"] %> (<%= filter["doc_count"] %>)
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <% if @search.aggregations.key?("lycee.statut") %>
+      <h2>Statut</h2>
+      <% if @filters.key?("lycee.statut") %>
+        <%= link_to "toutes les statut", schools_path(@filters.merge("lycee.statut" => nil)) %>
+      <% end %>
+      <ul>
+        <% (@search.aggregations["lycee.statut"]["buckets"] || @search.aggregations["lycee.statut"]["lycee.statut"]["buckets"]).each do |filter| %>
+          <li>
+            <%= link_to schools_path(@filters.merge("lycee.statut" => filter["key"])) do %>
               <%= filter["key"] %> (<%= filter["doc_count"] %>)
             <% end %>
           </li>

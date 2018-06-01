@@ -64,7 +64,8 @@ class School < ApplicationRecord
         sections: college.sections,
         options: college.options,
         commune: college.commune,
-        uai: college.uai
+        uai: college.uai,
+        statut: college.statut
         # ...
       }
     end
@@ -76,7 +77,8 @@ class School < ApplicationRecord
         sections: lycee.sections,
         options: lycee.options,
         commune: lycee.commune,
-        uai: lycee.uai
+        uai: lycee.uai,
+        statut: lycee.statut
       }
       data[:lycee_filieres] = lycee.filieres.map do |filiere|
         {
