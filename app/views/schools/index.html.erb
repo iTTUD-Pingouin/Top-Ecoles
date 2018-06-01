@@ -1,6 +1,29 @@
 <div class="container">
-  <h1> Toutes les Ecoles !</h1>
+  <h1> Toutes les Ecoles ! <%= @schools.count %></h1>
   <div class="filters">
+
+    <!------------------------ COLLEGE FILTERS  ------------>
+    <% if @search.aggregations.key?("college.sections") %>
+      <h2>Sections</h2>
+      <% if @filters.key?("college.sections") %>
+        <%= link_to "toutes les sections", schools_path(@filters.merge("college.sections" => nil)) %>
+      <% end %>
+      <ul>
+        <% (@search.aggregations["college.sections"]["buckets"] || @search.aggregations["college.sections"]["college.sections"]["buckets"]).each do |filter| %>
+          <li>
+            <%= link_to schools_path(@filters.merge("college.sections" => filter["key"])) do %>
+              <%= filter["key"] %> (<%= filter["doc_count"] %>)
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <!------------------------ COLLEGE FILTERS  ------------>
+
+
+
+    <!--------------- LYCEE FILTERS ---------------------->
+
     <% if @search.aggregations.key?("lycee_filieres.name") %>
       <h2>Filière</h2>
       <% if @filters.key?("lycee_filieres.name") %>
@@ -18,7 +41,7 @@
     <% end %>
 
     <% if @search.aggregations.key?("lycee_filieres.mention_rate") %>
-      <h2>Taux de réussite</h2>
+      <h2>Taux de réussite global</h2>
       <% if @filters.key?("lycee_filieres.mention_rate") %>
         <%= link_to "Supprimer le filtre", schools_path(@filters.merge("lycee_filieres.mention_rate" => nil)) %>
       <% end %>
@@ -26,7 +49,15 @@
         <% (@search.aggregations["lycee_filieres.mention_rate"]["buckets"] || @search.aggregations["lycee_filieres.mention_rate"]["lycee_filieres.mention_rate"]["buckets"]).each do |filter| %>
           <li>
             <%= link_to schools_path(@filters.merge("lycee_filieres.mention_rate" => filter["key"])) do %>
-              <%= filter["key"] %> (<%= filter["doc_count"] %>)
+              <% if filter["key"] == "0.0-70.0" %>
+                Moins de 70%
+              <% elsif filter["key"] == "70.0-80.0" %>
+                Plus de 70%
+              <% elsif filter["key"] == "80.0-90.0" %>
+                Plus de 80%
+              <% else %>
+                Plus de 90%
+              <% end %>
             <% end %>
           </li>
         <% end %>
@@ -48,6 +79,8 @@
         <% end %>
       </ul>
     <% end %>
+
+    <!--------------- LYCEE FILTERS ---------------------->
 
 
   </div>

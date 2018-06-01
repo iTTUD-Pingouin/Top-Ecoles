@@ -3,11 +3,16 @@ class SchoolsController < ApplicationController
     @filters = params.permit(
       # base
       :city, :type,
-      # aggregats
+      # aggregats primaire
+      "primaire.sections",
+      # aggregats college
+      "college.sections",
+      # aggregats lycee
       "lycee_filieres.name",
       "lycee.sections",
       "lycee_filieres.mention_rate"
     )
+
 
     conditions = {}
     @aggregations = []
@@ -23,14 +28,33 @@ class SchoolsController < ApplicationController
     case params[:type]
     when 'primaire'
       conditions[:has_primaire] = true
+      @aggregations = ["primaire.sections"]
     when 'college'
       conditions[:has_college] = true
+      @aggregations = ["college.sections"]
     when 'lycee'
       conditions[:has_lycee] = true
-      @aggregations = ["lycee.sections", "lycee_filieres.name", "lycee_filieres.mention_rate"]
+
+      # SANS RANGE
+      # @aggregations = ["lycee.sections", "lycee_filieres.name", "lycee_filieres.mention_rate"]
+
+      # AVEC RANGE
+      rate_ranges = [{from: 0, to: 70}, {from: 70, to: 80}, {from: 80, to: 90}, {from: 90, to: 100}]
+
+      @aggregations = {
+        "lycee.sections" => { limit: 1000 },
+        "lycee_filieres.name" => { limit: 1000 },
+        "lycee_filieres.mention_rate" => { ranges: rate_ranges },
+      }
+
     end
 
-    # Aggregats
+    # Aggregats Collège
+    if params["college.sections"].present?
+      conditions["college.sections"] = params["college.sections"]
+    end
+
+    # Aggregats Lycée
     if params["lycee_filieres.name"].present?
       conditions["lycee_filieres.name"] = params["lycee_filieres.name"]
     end
@@ -40,9 +64,9 @@ class SchoolsController < ApplicationController
     end
 
     if params["lycee_filieres.mention_rate"].present?
-      conditions["lycee_filieres.mention_rate"] = params["lycee_filieres.mention_rate"]
+      range_boundaries = params["lycee_filieres.mention_rate"].split("-").map(&:to_i) # => [70, 80]
+      conditions["lycee_filieres.mention_rate"] = Range.new(*range_boundaries) # => 70..80
     end
-
 
     @search  = School.search(@query, where: conditions, aggs: @aggregations)
     @schools = @search.results
