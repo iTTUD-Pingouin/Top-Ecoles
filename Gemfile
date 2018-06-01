@@ -13,6 +13,9 @@ gem 'redis'
 #search
 gem 'searchkick', '~> 3.0'
 
+#seed
+gem 'faker'
+
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

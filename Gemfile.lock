@@ -73,6 +73,8 @@ GEM
       multi_json
     erubi (1.7.1)
     execjs (2.7.0)
+    faker (1.8.7)
+      i18n (>= 0.7)
     faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
@@ -221,6 +223,7 @@ DEPENDENCIES
   bootsnap
   bootstrap-sass (~> 3.3)
   devise
+  faker
   figaro
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)

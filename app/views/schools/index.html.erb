@@ -1,5 +1,56 @@
 <div class="container">
   <h1> Toutes les Ecoles !</h1>
+  <div class="filters">
+    <% if @search.aggregations.key?("lycee_filieres.name") %>
+      <h2>Filière</h2>
+      <% if @filters.key?("lycee_filieres.name") %>
+        <%= link_to "toutes les filières", schools_path(@filters.merge("lycee_filieres.name" => nil)) %>
+      <% end %>
+      <ul>
+        <% (@search.aggregations["lycee_filieres.name"]["buckets"] || @search.aggregations["lycee_filieres.name"]["lycee_filieres.name"]["buckets"]).each do |filter| %>
+          <li>
+            <%= link_to schools_path(@filters.merge("lycee_filieres.name" => filter["key"])) do %>
+              <%= filter["key"] %> (<%= filter["doc_count"] %>)
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <% if @search.aggregations.key?("lycee_filieres.mention_rate") %>
+      <h2>Taux de réussite</h2>
+      <% if @filters.key?("lycee_filieres.mention_rate") %>
+        <%= link_to "Supprimer le filtre", schools_path(@filters.merge("lycee_filieres.mention_rate" => nil)) %>
+      <% end %>
+      <ul>
+        <% (@search.aggregations["lycee_filieres.mention_rate"]["buckets"] || @search.aggregations["lycee_filieres.mention_rate"]["lycee_filieres.mention_rate"]["buckets"]).each do |filter| %>
+          <li>
+            <%= link_to schools_path(@filters.merge("lycee_filieres.mention_rate" => filter["key"])) do %>
+              <%= filter["key"] %> (<%= filter["doc_count"] %>)
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <% if @search.aggregations.key?("lycee.sections") %>
+      <h2>Sections</h2>
+      <% if @filters.key?("lycee.sections") %>
+        <%= link_to "toutes les sections", schools_path(@filters.merge("lycee.sections" => nil)) %>
+      <% end %>
+      <ul>
+        <% (@search.aggregations["lycee.sections"]["buckets"] || @search.aggregations["lycee.sections"]["lycee.sections"]["buckets"]).each do |filter| %>
+          <li>
+            <%= link_to schools_path(@filters.merge("lycee.sections" => filter["key"])) do %>
+              <%= filter["key"] %> (<%= filter["doc_count"] %>)
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+
+  </div>
   <div class="row">
     <% @schools.each do |school| %>
       <% if school.college %>
@@ -54,9 +105,9 @@
             <div class="give-card-space">
               <div class="card-school-name">
                 <% if school.name.length > 38 %>
-                  <h2>Collège <%= school.name[0..34] + "..." %></h2>
+                  <h2>Lycée <%= school.name[0..34] + "..." %></h2>
                 <% else %>
-                  <h2>Collège <%= school.name%></h2>
+                  <h2>Lycée <%= school.name%></h2>
                 <% end %>
               </div>
 
