@@ -11,6 +11,7 @@ class SchoolsController < ApplicationController
       # aggregats lycee
       "lycee_filieres.name",
       "lycee.sections",
+      "lycee.statut",
       "lycee_filieres.mention_rate"
     )
 
@@ -43,6 +44,7 @@ class SchoolsController < ApplicationController
 
       @aggregations = {
         "lycee.sections" => { limit: 1000 },
+        "lycee.statut" => { limit: 1000 },
         "lycee_filieres.name" => { limit: 1000 },
         "lycee_filieres.mention_rate" => { ranges: rate_ranges },
       }
@@ -61,6 +63,10 @@ class SchoolsController < ApplicationController
     # Aggregats Lycée
     if params["lycee_filieres.name"].present?
       conditions["lycee_filieres.name"] = params["lycee_filieres.name"]
+    end
+
+    if params["lycee.statut"].present?
+      conditions["lycee.statut"] = params["lycee.statut"]
     end
 
     if params["lycee.sections"].present?
