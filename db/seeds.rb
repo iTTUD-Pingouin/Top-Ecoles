@@ -20,9 +20,9 @@ CSV.foreach(filepath, csv_options) do |row|
   school.save
 
   if row["type d'établissement"] == "Collège"
-    College.create!(address: row["adresse"], school_id: school.id, uai: row['code UAI'], commune: row['commune'])
+    College.create!(address: row["adresse"], school_id: school.id, statut: school.statut, uai: row['code UAI'], commune: row['commune'])
   elsif row["type d'établissement"] == "Lycée"
-    Lycee.create!(address: row["adresse"], school_id: school.id, uai: row['code UAI'], commune: row['commune'])
+    Lycee.create!(address: row["adresse"], school_id: school.id, statut: school.statut, uai: row['code UAI'], commune: row['commune'])
   end
 
 
@@ -60,5 +60,20 @@ puts "Creating some filieres"
   )
   filiere.save!
 end
+puts "Filières added!"
+
+
+puts "Creating 3 others Collèges"
+
+School.create!(name: 'Sacré Coeur', commune: 'Aix-en-Provence', statut: 'Privé sous contrat')
+College.create!(address: '33 cours Mirabeau', school_id: 24, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "BRITANNIQUE"])
+
+School.create!(name: 'Sainte-Marie', commune: 'Aix-en-Provence', statut: 'Privé sous contrat')
+College.create!(address: '24 avenue des arts et métiers', school_id: 25, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE"])
+
+School.create!(name: 'Emile Zola', commune: 'Aix-en-Provence', statut: 'Public')
+College.create!(address: '2 rue de Rome', school_id: 26, statut: 'Public', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE", "JAPONAISE"])
+
+puts "3 others Collèges created"
 
 
