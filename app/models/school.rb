@@ -61,6 +61,8 @@ class School < ApplicationRecord
       data[:college] = {
         address: college.address,
         total_fees: college.total_fees,
+        sections: college.sections,
+        options: college.options,
         commune: college.commune,
         uai: college.uai
         # ...

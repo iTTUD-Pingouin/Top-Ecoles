@@ -2,6 +2,27 @@
   <h1> Toutes les Ecoles ! <%= @schools.count %></h1>
   <div class="filters">
 
+    <!------------------------ COLLEGE FILTERS  ------------>
+    <% if @search.aggregations.key?("college.sections") %>
+      <h2>Sections</h2>
+      <% if @filters.key?("college.sections") %>
+        <%= link_to "toutes les sections", schools_path(@filters.merge("college.sections" => nil)) %>
+      <% end %>
+      <ul>
+        <% (@search.aggregations["college.sections"]["buckets"] || @search.aggregations["college.sections"]["college.sections"]["buckets"]).each do |filter| %>
+          <li>
+            <%= link_to schools_path(@filters.merge("college.sections" => filter["key"])) do %>
+              <%= filter["key"] %> (<%= filter["doc_count"] %>)
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <!------------------------ COLLEGE FILTERS  ------------>
+
+
+
+    <!--------------- LYCEE FILTERS ---------------------->
 
     <% if @search.aggregations.key?("lycee_filieres.name") %>
       <h2>Filière</h2>
@@ -58,6 +79,8 @@
         <% end %>
       </ul>
     <% end %>
+
+    <!--------------- LYCEE FILTERS ---------------------->
 
 
   </div>

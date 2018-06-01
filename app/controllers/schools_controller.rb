@@ -13,6 +13,7 @@ class SchoolsController < ApplicationController
       "lycee_filieres.mention_rate"
     )
 
+
     conditions = {}
     @aggregations = []
 
@@ -48,7 +49,12 @@ class SchoolsController < ApplicationController
 
     end
 
-    # Aggregats
+    # Aggregats Collège
+    if params["college.sections"].present?
+      conditions["college.sections"] = params["college.sections"]
+    end
+
+    # Aggregats Lycée
     if params["lycee_filieres.name"].present?
       conditions["lycee_filieres.name"] = params["lycee_filieres.name"]
     end
