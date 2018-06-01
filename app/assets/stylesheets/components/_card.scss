@@ -4,6 +4,7 @@
  border-radius: 5px;
  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
  padding-bottom: 15px;
+ margin-bottom: 30px;
 }
 .card-image {
   background-image: asset-url('university.jpg');
@@ -29,7 +30,9 @@
   }
 }
 .card-school-name {
+  height: 81px;
   h2 {
+    font-size: 32px;
     margin: 0;
   }
   padding: 20px 30px 0px 30px;
