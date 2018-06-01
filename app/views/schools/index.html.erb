@@ -20,26 +20,24 @@
     <% end %>
 
     <% if @search.aggregations.key?("lycee_filieres.mention_rate") %>
-      <h2>Taux de réussite</h2>
+      <h2>Taux de réussite global</h2>
       <% if @filters.key?("lycee_filieres.mention_rate") %>
         <%= link_to "Supprimer le filtre", schools_path(@filters.merge("lycee_filieres.mention_rate" => nil)) %>
       <% end %>
       <ul>
         <% (@search.aggregations["lycee_filieres.mention_rate"]["buckets"] || @search.aggregations["lycee_filieres.mention_rate"]["lycee_filieres.mention_rate"]["buckets"]).each do |filter| %>
           <li>
-
-
-
             <%= link_to schools_path(@filters.merge("lycee_filieres.mention_rate" => filter["key"])) do %>
               <% if filter["key"] == "0.0-70.0" %>
                 Moins de 70%
+              <% elsif filter["key"] == "70.0-80.0" %>
+                Plus de 70%
+              <% elsif filter["key"] == "80.0-90.0" %>
+                Plus de 80%
               <% else %>
-                <%= filter["key"] %> (<%= filter["doc_count"] %>)
+                Plus de 90%
               <% end %>
             <% end %>
-
-
-
           </li>
         <% end %>
       </ul>
