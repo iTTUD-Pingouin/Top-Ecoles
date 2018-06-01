@@ -79,11 +79,11 @@ class School < ApplicationRecord
       data[:lycee_filieres] = lycee.filieres.map do |filiere|
         {
           name: filiere.name,
-          success_rate: filiere.success_rate,
-          mention_rate: filiere.mention_rate,
-          tb_mention_rate: filiere.tb_mention_rate,
-          ab_mention_rate: filiere.ab_mention_rate,
-          b_mention_rate: filiere.b_mention_rate,
+          success_rate: filiere.success_rate.to_i,
+          mention_rate: filiere.mention_rate.to_i,
+          tb_mention_rate: filiere.tb_mention_rate.to_i,
+          ab_mention_rate: filiere.ab_mention_rate.to_i,
+          b_mention_rate: filiere.b_mention_rate.to_i,
           serie: filiere.serie
         }
       end

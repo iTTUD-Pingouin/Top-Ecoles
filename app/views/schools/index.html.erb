@@ -1,6 +1,8 @@
 <div class="container">
-  <h1> Toutes les Ecoles !</h1>
+  <h1> Toutes les Ecoles ! <%= @schools.count %></h1>
   <div class="filters">
+
+
     <% if @search.aggregations.key?("lycee_filieres.name") %>
       <h2>Filière</h2>
       <% if @filters.key?("lycee_filieres.name") %>
@@ -25,9 +27,19 @@
       <ul>
         <% (@search.aggregations["lycee_filieres.mention_rate"]["buckets"] || @search.aggregations["lycee_filieres.mention_rate"]["lycee_filieres.mention_rate"]["buckets"]).each do |filter| %>
           <li>
+
+
+
             <%= link_to schools_path(@filters.merge("lycee_filieres.mention_rate" => filter["key"])) do %>
-              <%= filter["key"] %> (<%= filter["doc_count"] %>)
+              <% if filter["key"] == "0.0-70.0" %>
+                Moins de 70%
+              <% else %>
+                <%= filter["key"] %> (<%= filter["doc_count"] %>)
+              <% end %>
             <% end %>
+
+
+
           </li>
         <% end %>
       </ul>
