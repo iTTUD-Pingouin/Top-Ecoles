@@ -8,7 +8,12 @@
 .navbarTE-left {
   width: 300px;
   background-color: $blue;
+  padding-top: 10px;
+  padding-left: 20px;
   a {
     color: $light-blue;
+  }
+  h1 {
+    font-family: $logo-font;
   }
 }

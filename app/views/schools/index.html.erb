@@ -5,12 +5,14 @@
     <div class="filters">
       <!------------------------ COLLEGE FILTERS  ------------>
       <% if @search.aggregations.key?("college.sections") %>
-        <h2 type="button" data-toggle="collapse" data-target="#demo">Sections</h2>
+        <div class="filter-title" id=>
+          <h2 type="button" data-toggle="collapse" data-target="#demo">Sections</h2>
+        </div>
         <div id="demo" class="collapse">
           <% if @filters.key?("college.sections") %>
             <%= link_to "toutes les sections", schools_path(@filters.merge("college.sections" => nil)) %>
           <% end %>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["college.sections"]["buckets"] || @search.aggregations["college.sections"]["college.sections"]["buckets"]).each do |filter| %>
               <li>
                 <%= link_to schools_path(@filters.merge("college.sections" => filter["key"])) do %>
@@ -23,7 +25,9 @@
       <% end %>
 
       <% if @search.aggregations.key?("college.statut") %>
-        <h2 type="button" data-toggle="collapse" data-target="#demo2">Statut</h2>
+        <div class="filter-title">
+          <h2 type="button" data-toggle="collapse" data-target="#demo2">Statut</h2>
+        </div>
         <div id="demo2" class="collapse">
           <% if @filters.key?("college.statut") %>
             <%= link_to "toutes les statut", schools_path(@filters.merge("college.statut" => nil)) %>
@@ -45,13 +49,14 @@
       <!--------------- LYCEE FILTERS ---------------------->
 
       <% if @search.aggregations.key?("lycee_filieres.name") %>
-        <h2 type="button" data-toggle="collapse" data-target="#demo3">Filières</h2>
+        <div class="filter-title">
+          <h2 type="button" data-toggle="collapse" data-target="#demo3">Filières</h2>
+        </div>
         <div id="demo3" class="collapse">
-
           <% if @filters.key?("lycee_filieres.name") %>
             <%= link_to "toutes les filières", schools_path(@filters.merge("lycee_filieres.name" => nil)) %>
           <% end %>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["lycee_filieres.name"]["buckets"] || @search.aggregations["lycee_filieres.name"]["lycee_filieres.name"]["buckets"]).each do |filter| %>
               <li>
                 <%= link_to schools_path(@filters.merge("lycee_filieres.name" => filter["key"])) do %>
@@ -64,12 +69,14 @@
       <% end %>
 
       <% if @search.aggregations.key?("lycee_filieres.mention_rate") %>
-        <h2 type="button" data-toggle="collapse" data-target="#demo4">Taux de réussite global</h2>
+        <div class="filter-title">
+          <h2 type="button" data-toggle="collapse" data-target="#demo4">Taux de réussite global</h2>
+        </div>
         <div id="demo4" class="collapse">
           <% if @filters.key?("lycee_filieres.mention_rate") %>
             <%= link_to "Supprimer le filtre", schools_path(@filters.merge("lycee_filieres.mention_rate" => nil)) %>
           <% end %>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["lycee_filieres.mention_rate"]["buckets"] || @search.aggregations["lycee_filieres.mention_rate"]["lycee_filieres.mention_rate"]["buckets"]).each do |filter| %>
               <li>
                 <%= link_to schools_path(@filters.merge("lycee_filieres.mention_rate" => filter["key"])) do %>
@@ -90,12 +97,14 @@
       <% end %>
 
       <% if @search.aggregations.key?("lycee.sections") %>
-        <h2 type="button" data-toggle="collapse" data-target="#demo5">Sections</h2>
+        <div class="filter-title">
+          <h2 type="button" data-toggle="collapse" data-target="#demo5">Sections</h2>
+        </div>
         <div id="demo5" class="collapse">
           <% if @filters.key?("lycee.sections") %>
             <%= link_to "toutes les sections", schools_path(@filters.merge("lycee.sections" => nil)) %>
           <% end %>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["lycee.sections"]["buckets"] || @search.aggregations["lycee.sections"]["lycee.sections"]["buckets"]).each do |filter| %>
               <li>
                 <%= link_to schools_path(@filters.merge("lycee.sections" => filter["key"])) do %>
@@ -108,12 +117,14 @@
       <% end %>
 
       <% if @search.aggregations.key?("lycee.statut") %>
-        <h2 type="button" data-toggle="collapse" data-target="#demo6">Statut</h2>
+        <div class="filter-title">
+          <h2 type="button" data-toggle="collapse" data-target="#demo6">Statut</h2>
+        </div>
         <div id="demo6" class="collapse">
           <% if @filters.key?("lycee.statut") %>
             <%= link_to "toutes les statut", schools_path(@filters.merge("lycee.statut" => nil)) %>
           <% end %>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["lycee.statut"]["buckets"] || @search.aggregations["lycee.statut"]["lycee.statut"]["buckets"]).each do |filter| %>
               <li>
                 <%= link_to schools_path(@filters.merge("lycee.statut" => filter["key"])) do %>
@@ -127,9 +138,6 @@
 
       <!--------------- LYCEE FILTERS ---------------------->
     </div>
-
-
-
   </div>
   <div class="container">
     <h1> Toutes les Ecoles ! <%= @schools.count %></h1>

@@ -1,6 +1,8 @@
 <div class="navbar-topecole">
   <div class="navbarTE-left">
-    <%= link_to 'Home', root_path %>
+    <%= link_to root_path do %>
+      <h1> Topécoles </h1>
+    <% end %>
   </div>
   <div class="navbarTE-right">
     <%= image_tag "Icons/graduation-hat.svg", width: 70%>
