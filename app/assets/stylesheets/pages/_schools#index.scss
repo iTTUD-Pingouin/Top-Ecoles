@@ -1,0 +1,23 @@
+
+.main-container {
+  display: flex;
+}
+#sidebar-filters {
+  background-color: $blue;
+  flex: 0 0 300px;
+  padding-left: 20px;
+  h2 {
+    color: $light-blue;
+  }
+  a {
+    color: white;
+  }
+  // position: sticky !important; /* !important to override Gmaps inline CSS */
+  // top: 0 !important;
+}
+
+.filters {
+  h2 {
+    font-size: 32px;
+  }
+}
