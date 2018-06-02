@@ -17,3 +17,32 @@
     font-family: $logo-font;
   }
 }
+
+
+.navbarTE-right {
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+
+.hat-notifs {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  h1 {
+    position: absolute;
+    margin: 0;
+    top: 0px;
+    left: 5px;
+    font-size: 64px;
+  }
+  p {
+    position: absolute;
+    bottom: 16px;
+  }
+  img {
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+}

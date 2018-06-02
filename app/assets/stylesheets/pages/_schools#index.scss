@@ -31,6 +31,11 @@
   cursor: pointer;
 }
 
+.filter-title:hover {
+  border-top: 1px solid rgba(260,260,260,.6);
+  border-bottom: 1px solid rgba(260,260,260,.6);
+}
+
 .filter-space-list {
   margin-top: 10px;
 }
@@ -39,4 +44,6 @@
   margin-bottom: 60px;
   margin-top: -75px;
 }
+
+
 

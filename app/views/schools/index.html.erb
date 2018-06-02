@@ -32,7 +32,7 @@
           <% if @filters.key?("college.statut") %>
             <%= link_to "toutes les statut", schools_path(@filters.merge("college.statut" => nil)) %>
           <% end %>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["college.statut"]["buckets"] || @search.aggregations["college.statut"]["college.statut"]["buckets"]).each do |filter| %>
               <li>
                 <%= link_to schools_path(@filters.merge("college.statut" => filter["key"])) do %>
