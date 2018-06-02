@@ -81,7 +81,7 @@
               <li>
                 <%= link_to schools_path(@filters.merge("lycee_filieres.mention_rate" => filter["key"])) do %>
                   <% if filter["key"] == "0.0-70.0" %>
-                    Moins de 70%
+
                   <% elsif filter["key"] == "70.0-80.0" %>
                     Plus de 70%
                   <% elsif filter["key"] == "80.0-90.0" %>
@@ -140,7 +140,7 @@
     </div>
   </div>
   <div class="container">
-    <h1> Toutes les Ecoles ! <%= @schools.count %></h1>
+    <h1 id="schools_count"> <%= @schools.count %> écoles</h1>
     <div class="row">
       <% @schools.each do |school| %>
         <% if school.college %>
