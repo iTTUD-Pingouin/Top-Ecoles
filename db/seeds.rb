@@ -66,13 +66,13 @@ puts "Filières added!"
 puts "Creating 3 others Collèges"
 
 School.create!(name: 'Sacré Coeur', commune: 'Aix-en-Provence', statut: 'Privé sous contrat')
-College.create!(address: '33 cours Mirabeau', school_id: 24, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "BRITANNIQUE"])
+College.create!(address: '33 cours Mirabeau', school_id: 24, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "BRITANNIQUE"], activities: ["Arts plastiques", "Musique", "Football", "Tennis"])
 
 School.create!(name: 'Sainte-Marie', commune: 'Aix-en-Provence', statut: 'Privé sous contrat')
-College.create!(address: '24 avenue des arts et métiers', school_id: 25, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE"])
+College.create!(address: '24 avenue des arts et métiers', school_id: 25, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE"], activities: ["Théatre", "Musique", "Cinéma", "Arts plastiques"])
 
 School.create!(name: 'Emile Zola', commune: 'Aix-en-Provence', statut: 'Public')
-College.create!(address: '2 rue de Rome', school_id: 26, statut: 'Public', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE", "JAPONAISE"])
+College.create!(address: '2 rue de Rome', school_id: 26, statut: 'Public', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE", "JAPONAISE"], activities: ["Arts plastiques", "Musique", "Football", "Piscine"])
 
 puts "3 others Collèges created"
 

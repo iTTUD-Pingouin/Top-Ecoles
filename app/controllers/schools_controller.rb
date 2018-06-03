@@ -8,6 +8,7 @@ class SchoolsController < ApplicationController
       # aggregats college
       "college.sections",
       "college.statut",
+      "college.activities",
       # aggregats lycee
       "lycee_filieres.name",
       "lycee.sections",
@@ -32,7 +33,7 @@ class SchoolsController < ApplicationController
       conditions[:has_primaire] = true
     when 'college'
       conditions[:has_college] = true
-      @aggregations = ["college.sections", "college.statut"]
+      @aggregations = ["college.sections", "college.statut", "college.activities"]
     when 'lycee'
       conditions[:has_lycee] = true
 
@@ -58,6 +59,10 @@ class SchoolsController < ApplicationController
 
     if params["college.statut"].present?
       conditions["college.statut"] = params["college.statut"]
+    end
+
+    if params["college.activities"].present?
+      conditions["college.activities"] = params["college.activities"]
     end
 
     # Aggregats Lycée

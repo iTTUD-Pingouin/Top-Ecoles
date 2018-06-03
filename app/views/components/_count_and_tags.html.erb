@@ -1,0 +1,101 @@
+<!--------------- COUNT AND TAGS  ---------------------->
+    <div class="count_and_tags">
+
+      <div class="schools-count">
+        <p> <%= @schools.count %> écoles</p>
+      </div>
+
+      <% if @filters.key?("college.sections") %>
+          <div class="tag">
+            <p> Section <%= @filters["college.sections"].capitalize %></p>
+            <% if @filters.key?("college.sections") %>
+              <div class="link-sup-tag">
+                <%= link_to schools_path(@filters.merge("college.sections" => nil)) do %>
+                  <i class="fas fa-times"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+
+      <% if @filters.key?("college.statut") %>
+          <div class="tag">
+            <p> <%= @filters["college.statut"].capitalize %></p>
+            <% if @filters.key?("college.statut") %>
+              <div class="link-sup-tag">
+                <%= link_to schools_path(@filters.merge("college.statut" => nil)) do %>
+                  <i class="fas fa-times"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+
+      <% if @filters.key?("college.activities") %>
+          <div class="tag">
+            <p> <%= @filters["college.activities"].capitalize %></p>
+            <% if @filters.key?("college.activities") %>
+              <div class="link-sup-tag">
+                <%= link_to schools_path(@filters.merge("college.activities" => nil)) do %>
+                  <i class="fas fa-times"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+
+      <% if @filters.key?("lycee_filieres.name") %>
+          <div class="tag">
+            <p> Filière <%= @filters["lycee_filieres.name"] %></p>
+            <% if @filters.key?("lycee_filieres.name") %>
+              <div class="link-sup-tag">
+                <%= link_to schools_path(@filters.merge("lycee_filieres.name" => nil)) do %>
+                  <i class="fas fa-times"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+
+      <% if @filters.key?("lycee_filieres.mention_rate") %>
+          <div class="tag">
+            <p> Taux de réussite : <%= @filters["lycee_filieres.mention_rate"].capitalize %> %</p>
+            <% if @filters.key?("lycee_filieres.mention_rate") %>
+              <div class="link-sup-tag">
+                <%= link_to schools_path(@filters.merge("lycee_filieres.mention_rate" => nil)) do %>
+                  <i class="fas fa-times"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+
+      <% if @filters.key?("lycee.sections") %>
+          <div class="tag">
+            <p> <%= @filters["lycee.sections"].capitalize %></p>
+            <% if @filters.key?("lycee.sections") %>
+              <div class="link-sup-tag">
+                <%= link_to schools_path(@filters.merge("lycee.sections" => nil)) do %>
+                  <i class="fas fa-times"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+
+      <% if @filters.key?("lycee.statut") %>
+          <div class="tag">
+            <p> <%= @filters["lycee.statut"].capitalize %></p>
+            <% if @filters.key?("lycee.statut") %>
+              <div class="link-sup-tag">
+                <%= link_to schools_path(@filters.merge("lycee.statut" => nil)) do %>
+                  <i class="fas fa-times"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+
+
+    </div>
+<!--------------- COUNT AND TAGS ---------------------->
