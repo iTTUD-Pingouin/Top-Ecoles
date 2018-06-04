@@ -6,5 +6,8 @@ Rails.application.routes.draw do
       get "selection", to: "schools#selection"
       get "test", to: "schools#parsing_sample_csv"
     end
+    member do
+      get "compare", to: "schools#add_to_compare_list"
+    end
   end
 end

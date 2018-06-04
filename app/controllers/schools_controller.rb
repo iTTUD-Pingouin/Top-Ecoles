@@ -92,5 +92,24 @@ class SchoolsController < ApplicationController
   end
 
   def selection
+    @schools = []
+    session[:selection].each do |school_id|
+      @schools << School.find(school_id)
+    end
+    @schools
+  end
+
+  def add_to_compare_list
+
+
+    session[:selection] = [] unless session[:selection]
+    if session[:selection].include?(params[:id].to_s)
+      session[:selection] -= ["#{params[:id]}"]
+    else
+      school = params[:id]
+      session[:selection] << school
+    end
+
+
   end
 end
