@@ -1,8 +1,54 @@
 <div id="sidebar-filters">
+
+
+
+
     <div class="filters">
+        <!------------------ SEARCH BAR AND TYPE  ------------>
+
+        <div class="filter-title">
+          <h2 type="button" data-toggle="collapse" data-target="#demo8">Lieu</h2>
+        </div>
+        <div id="demo8" class="collapse">
+          <%= form_tag('/schools', method: :get )  do %>
+
+
+                <%= radio_button_tag 'type', "primaire", true %>
+                <%= label_tag :type_primaire, "Primaire" %>
+
+
+
+
+                <%= radio_button_tag 'type', "college", true %>
+                <%= label_tag :type_college, "Collège" %>
+
+
+
+                <%= radio_button_tag 'type', "lycee", true%>
+                <%= label_tag :type_lycee, "Lycée"%>
+
+
+
+                <%= radio_button_tag 'type', "sup", true%>
+                <%= label_tag :type_sup, "Ecole Sup"%>
+
+
+
+                <%= text_field_tag('city', nil, placeholder: 'Dans quelle ville cherchez-vous? Ex: Paris, Marseille ...', class:"form-control rounded-tft") %>
+
+
+                <%= submit_tag 'Recherchez votre école !', class: "submit-home-button", id: "submit-search" %>
+          <% end %>
+        </div>
+
+        <!------------------ SEARCH BAR AND TYPE  ------------>
+
+
+
+
       <!------------------------ COLLEGE FILTERS  ------------>
       <% if @search.aggregations.key?("college.sections") %>
-        <div class="filter-title" id=>
+        <div class="filter-title">
           <h2 type="button" data-toggle="collapse" data-target="#demo">Sections</h2>
         </div>
         <div id="demo" class="collapse">
