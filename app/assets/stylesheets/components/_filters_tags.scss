@@ -1,0 +1,53 @@
+.tag {
+  padding-right:15px;
+  padding-left: 15px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: lighter;
+  font-size: 20px;
+  height: 50px;
+  border: 1px solid rgba(30,30,30,0.3);
+  border-radius: 56px;
+  color: rgba(66, 66, 66, 0.6);
+  p {
+    margin: 0;
+  }
+}
+
+.tag:hover {
+    color: rgba(66, 66, 66, 0.8);
+    border: 1px solid rgba(30,30,30,0.6);
+  }
+
+
+
+.count_and_tags {
+  position: sticky;
+  top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+
+.schools-count {
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  p {
+  margin:0;
+  height: 50px;
+  font-size: 44px;
+  }
+}
+
+.link-sup-tag {
+  margin-left: 8px;
+  a {
+    color: rgba(66, 66, 66, 0.6);
+    font-weight: lighter;
+  }
+}

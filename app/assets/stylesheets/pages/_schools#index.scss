@@ -6,6 +6,9 @@
   background-color: $blue;
   flex: 0 0 300px;
   padding-left: 20px;
+  height: 150vh;
+  position: sticky;
+  top: 0;
   h2 {
     color: $light-blue;
   }
@@ -31,6 +34,15 @@
   cursor: pointer;
 }
 
+.filter-title:hover {
+  border-top: 1px solid rgba(260,260,260,.6);
+  border-bottom: 1px solid rgba(260,260,260,.6);
+}
+
 .filter-space-list {
   margin-top: 10px;
 }
+
+
+
+
