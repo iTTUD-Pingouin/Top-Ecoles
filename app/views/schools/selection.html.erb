@@ -1,1 +1,5 @@
 <h1>Voici les écoles comparées</h1>
+
+<% @schools.each do |school| %>
+  <p><%= school.name %></p>
+<% end %>
