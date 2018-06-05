@@ -1,6 +1,9 @@
 <div class="container banner">
   <div class="col-xs-12 col-sm-8">
     <div class="school-name"><h1><%= @school.name %></h1>
+      <% 5.times do |star| %>
+      <%= image_tag "icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -18,9 +21,20 @@
   </div>
   <div class="container text">
     <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-      <div class="paragraph">
-        <h4 id="list-item-1">Description</h4>
-        <p>« [32] Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora in</p>
+      <div class="paragraph" style=" ">
+        <div style="border: 1px solid #ddd; width: 60%; height: 100%">
+          <h4 id="list-item-1">Description</h4>
+          <p>Amiens 80400 - </p>
+          <p></p>
+        </div>
+
+        <div style="border: 1px solid grey; width: 30%; height: 100%">
+          <h4 id="list-item-1">Description</h4>
+
+
+        </div>
+
+
       </div>
       <div class="paragraph">
         <h4 id="list-item-2">Résultats</h4>

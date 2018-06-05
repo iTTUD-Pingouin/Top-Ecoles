@@ -1,0 +1,100 @@
+.container2 {
+  height: 500px;
+  position: relative;
+  // perspective: 800px;
+  // margin: 0 auto;
+  border: 0.2px black;
+  border-radius: 5px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.card2 {
+ border: 0.2px black;
+ border-radius: 5px;
+ box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+ padding-bottom: 15px;
+ margin-bottom: 30px;
+}
+
+// .card2 {
+//   text-align: center;
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .card2 h3 {
+//   color: #fff;
+// }
+
+// .card2 p {
+//   color: #fff;
+//   font-family: 'Lato', sans-serif;
+//   font-weight: 300;
+// }
+
+/* .front {
+  transform: rotateY(-180deg);
+}
+
+.back {
+  transform: rotateY(0deg);
+} */
+
+
+.card2:hover .front {
+  transform: rotateY(-180deg);
+}
+.card2:hover .back {
+  transform: rotateY(0deg);
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: 0.5s;
+}
+
+.face.front {
+  transform: rotateY(0deg);
+}
+
+.face.back {
+  background: white;
+  background-image: asset-url('Backflipcard.jpg');
+  background-size: cover;
+  height: 500px;
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+// .card2 a.btn.btn-block {
+//   display: block;
+// }
+
+// .card2 a.btn.btn-outline {
+//   background: transparent;
+//   border: 1px solid #fff;
+//   border-radius: 3px;
+//   padding: 10px;
+//   color: #fff;
+//   text-align: center;
+//   text-decoration: none;
+// }
+
+// .card2 a.btn.btn-outline:hover {
+//   background: #fff;
+//   border: 1px solid transparent;
+// }
+
