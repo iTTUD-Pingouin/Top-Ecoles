@@ -42,7 +42,8 @@
                   </div>
                   <div class="card-rating">
                     <%= link_to schools_path do %>
-                      <div class="card-rating-star" src="">
+                      <% 5.times do |star| %>
+                      <%= image_tag "icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
                     <% end %>
                   </div>
                 </div>
@@ -81,7 +82,9 @@
                   </div>
                   <div class="card-rating">
                     <%= link_to schools_path do %>
-                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                      <% 5.times do |star| %>
+                      <%= image_tag "icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
+                      <% end %>
                     <% end %>
                   </div>
                 </div>
