@@ -14,6 +14,7 @@
   }
   a {
     color: white;
+    font-size: 16px;
   }
   // position: sticky !important; /* !important to override Gmaps inline CSS */
   // top: 0 !important;
@@ -21,7 +22,7 @@
 
 .filters {
   h2 {
-    font-size: 32px;
+    font-size: 24px;
     margin: 0;
   }
 }
@@ -44,5 +45,62 @@
 }
 
 
+.container-to-top {
+  margin-top: -67px;
+}
 
 
+
+.btn-group-toggle2 {
+  input {
+    display: none;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 114px;
+    font-weight: lighter;
+    font-size: 16px;
+    margin: 10px -5px 0 16px;
+    height: 25px;
+    /* border: 1px solid rgba(30, 30, 30, 0.3); */
+    border-radius: 3px;
+    color: white;
+  }
+
+  input:hover + label {
+    color: rgba(66, 66, 66, 0.8);
+  }
+
+  input:checked + label {
+    color: white;
+    background-color: $orange;
+    border: 0px solid rgba(30,30,30,0.3);
+    box-shadow: 1px 1px 3px rgba(30,30,30,0.2);
+  }
+}
+
+.submit-home-button2 {
+  display: none;
+}
+
+.all-checkboxes {
+  width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rounded-tft2 {
+    /* border-radius: 50px; */
+    height: 36px;
+    font-size: 16px;
+    margin-right: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -6,10 +6,10 @@
 
 
 .navbarTE-left {
-  width: 300px;
+  min-width: 300px;
   background-color: $blue;
   padding-top: 10px;
-  padding-left: 20px;
+  // padding-left: 20px;
   a {
     // color: $light-blue;
     color: white;
@@ -20,30 +20,54 @@
 }
 
 
-.navbarTE-right {
-  padding-top: 10px;
-  padding-right: 20px;
+// .navbarTE-right {
+//   padding-top: 10px;
+//   padding-right: 30px;
+
+// }
+
+.display_none {
+  display: none;
 }
 
 
+.orange-counter {
+  color: $orange;
+}
+
 .hat-notifs {
-  position: relative;
-  width: 120px;
-  height: 120px;
+  margin-top: 5px;
+  width: 110px;
+  height: 110px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 50%;
+  z-index: 12;
+  background: rgba(244,244,244,.95);
+  box-shadow: 1px 1px 1px rgba(0,0,0,.1);
   h1 {
     position: absolute;
     margin: 0;
-    top: 0px;
-    left: 5px;
-    font-size: 64px;
+    top: 13px;
+    left: 39px;
+    font-size: 50px;
+    font-family: "Alfa Slab One", cursive;
   }
   p {
     position: absolute;
-    bottom: 16px;
+    bottom: 9px;
+    left: 21px;
+    font-size: 16px;
   }
-  img {
-    top: 0;
-    right: 0;
-    position: absolute;
+}
+
+.hat-notifs:hover {
+  background: $orange;
+  color: white;
+  cursor: pointer;
+  h1 {
+    color: white;
   }
 }

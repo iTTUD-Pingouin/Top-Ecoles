@@ -1,5 +1,14 @@
 
 
-document.getElementById("mon_comparateur_count").innerHTML = "<%= session[:selection].size %>"
+<% if @counter %>
+  document.getElementById("displaynonebutton").innerHTML = "<%= j render 'counter' %>";
+  document.getElementById("mon_comparateur_count").innerHTML = "<%= session[:selection].size %>";
+<% else %>
+  document.getElementById("displaynonebutton").innerHTML = "";
+<% end %>
 
-
+if (document.getElementById("mon_comparateur_count").innerHTML !== "0") {
+  document.getElementById("mon_comparateur_count").classList.add('orange-counter')
+} else {
+  document.getElementById("mon_comparateur_count").classList.remove('orange-counter')
+}
