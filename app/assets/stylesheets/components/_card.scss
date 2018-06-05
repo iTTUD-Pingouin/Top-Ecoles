@@ -16,17 +16,16 @@
   .card-image-button {
     position: absolute;
     text-align: center;
-    a {
-      color: #F4F4F4;
-    }
-
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 0px;
     bottom: -24px;
     right: 19px;
-    font-size: 20px;
     background: #424242;
-    padding: 10px;
-    border-radius: 300px;
-    width:49px;
+    border-radius: 50%;
+    width: 42px;
+    /* height: 50px; */
     opacity: 0.75;
   }
 }
@@ -60,6 +59,13 @@
   background-color: #F09000;
   opacity: 1;
 }
+
+.card-image-button-active {
+  background-color: #F09000 !important;
+  opacity: 1 !important;
+}
+
+
 .card-rating {
   text-align: center;
 
