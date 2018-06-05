@@ -1,5 +1,6 @@
 class SchoolsController < ApplicationController
   def index
+
     @filters = params.permit(
       # base
       :city, :type,
@@ -100,8 +101,6 @@ class SchoolsController < ApplicationController
   end
 
   def add_to_compare_list
-
-
     session[:selection] = [] unless session[:selection]
     if session[:selection].include?(params[:id].to_s)
       session[:selection] -= ["#{params[:id]}"]
@@ -109,7 +108,11 @@ class SchoolsController < ApplicationController
       school = params[:id]
       session[:selection] << school
     end
-
+    if session[:selection].size > 0
+      @counter = true
+    else
+      @counter = false
+    end
 
   end
 end

@@ -1,0 +1,9 @@
+<div class="hat-notifs" >
+
+  <h1 id="mon_comparateur_count" class="<%= "orange-counter" unless session[:selection].size == 0  %> ">
+
+    <%= session[:selection].size if !session[:selection].nil? %>
+  </h1>
+
+  <p>Comparez !</p>
+</div>

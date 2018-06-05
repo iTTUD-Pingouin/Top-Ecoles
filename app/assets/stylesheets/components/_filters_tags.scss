@@ -1,13 +1,14 @@
 .tag {
-  padding-right:15px;
+  padding-right: 15px;
   padding-left: 15px;
-  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   font-weight: lighter;
-  font-size: 20px;
-  height: 50px;
+  font-size: 18px;
+  height: 35px;
   border: 1px solid rgba(30,30,30,0.3);
   border-radius: 56px;
   color: rgba(66, 66, 66, 0.6);
@@ -24,9 +25,8 @@
 
 
 .count_and_tags {
-  position: sticky;
-  top: 30px;
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 20px;
   z-index: 10;
@@ -40,9 +40,10 @@
   align-items: center;
   padding-bottom: 10px;
   p {
-  margin:0;
+  // padding-top: 6px;
+  margin: -4px 14px 0 0;
   height: 50px;
-  font-size: 44px;
+  font-size: 37px;
   }
 }
 

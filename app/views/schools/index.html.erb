@@ -1,10 +1,19 @@
+<div id="displaynonebutton">
+  <% if session[:selection] && session[:selection].size > 0 %>
+    <%= render "counter" %>
+  <% end %>
+</div>
 
 
 <div class="main-container">
 
+
   <%= render 'components/sidebar_filters' %>
 
-  <div class="container">
+  <div class="container container-to-top">
+
+
+
     <%= render 'components/count_and_tags' %>
 
     <div class="results-container">
@@ -14,11 +23,12 @@
             <div class="col-xs-12 col-sm-6 col-md-4">
               <div class="main-card">
                 <div class="card-image">
-                  <div class="card-image-button">
-                    <%= link_to compare_school_path(school), remote: true do %>
-                      <i class="fas fa-heart"></i>
-                    <% end %>
-                  </div>
+                  <%= link_to compare_school_path(school), remote: true do %>
+
+                    <p class= "card-image-button<%= session[:selection]&.include?(school.id.to_s) ? " card-image-button-active" : "" %>" >
+                      +
+                    </p>
+                  <% end %>
                 </div>
                 <div class="give-card-space"></div>
                   <div class="card-school-name">
@@ -54,11 +64,12 @@
             <div class="col-xs-12 col-sm-6 col-md-4">
               <div class="main-card">
                 <div class="card-image">
-                  <div class="card-image-button">
-                    <%= link_to school_path(school) do %>
-                      <i class="fas fa-heart"></i>
-                    <% end %>
-                  </div>
+                  <%= link_to compare_school_path(school), remote: true do %>
+
+                    <p class= "card-image-button<%= session[:selection]&.include?(school.id.to_s) ? " card-image-button-active" : "" %>" >
+                      +
+                    </p>
+                  <% end %>
                 </div>
                 <div class="give-card-space">
                   <div class="card-school-name">
@@ -80,6 +91,7 @@
                       <li>BTS</li>
                     </ul>
                   </div>
+
                   <div class="card-rating">
                     <%= link_to schools_path do %>
                       <% 5.times do |star| %>
@@ -87,6 +99,7 @@
                       <% end %>
                     <% end %>
                   </div>
+
                 </div>
               </div>
             </div>

@@ -1,8 +1,6 @@
 <div id="sidebar-filters">
 
 
-
-
     <div class="filters">
         <!------------------ SEARCH BAR AND TYPE  ------------>
 
@@ -11,35 +9,42 @@
         </div>
         <div id="demo8" class="collapse">
           <%= form_tag('/schools', method: :get )  do %>
+            <div class="all-checkboxes">
+              <%= text_field_tag('city', nil, placeholder: 'Ville', class:"form-control rounded-tft2") %>
+            </div>
+          <% end %>
+        </div>
 
+        <div class="filter-title">
+          <h2 type="button" data-toggle="collapse" data-target="#demo9">Type d'établissement</h2>
+        </div>
+        <div id="demo9" class="collapse">
+          <%= form_tag('/schools', method: :get )  do %>
+            <div class="all-checkboxes">
 
-                <%= radio_button_tag 'type', "primaire", true %>
+              <div class="btn-group-toggle2" >
+                <%= radio_button_tag 'type', "primaire", false %>
                 <%= label_tag :type_primaire, "Primaire" %>
-
-
-
-
-                <%= radio_button_tag 'type', "college", true %>
+              </div>
+              <div class="btn-group-toggle2" >
+                <%= radio_button_tag 'type', "college", (params[:type] == "college" ? true : false)
+                 %>
                 <%= label_tag :type_college, "Collège" %>
-
-
-
-                <%= radio_button_tag 'type', "lycee", true%>
+              </div>
+              <div class="btn-group-toggle2" >
+                <%= radio_button_tag 'type', "lycee", (params[:type] == "lycee" ? true : false)%>
                 <%= label_tag :type_lycee, "Lycée"%>
-
-
-
-                <%= radio_button_tag 'type', "sup", true%>
+              </div>
+              <div class="btn-group-toggle2" >
+                <%= radio_button_tag 'type', "sup", false%>
                 <%= label_tag :type_sup, "Ecole Sup"%>
-
-
-
-                <%= text_field_tag('city', nil, placeholder: 'Dans quelle ville cherchez-vous? Ex: Paris, Marseille ...', class:"form-control rounded-tft") %>
-
+              </div>
+            </div>
 
                 <%= submit_tag 'Recherchez votre école !', class: "submit-home-button", id: "submit-search" %>
           <% end %>
         </div>
+
 
         <!------------------ SEARCH BAR AND TYPE  ------------>
 
