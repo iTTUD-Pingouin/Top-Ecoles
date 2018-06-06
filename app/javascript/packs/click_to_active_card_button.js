@@ -14,10 +14,3 @@ function clickToActiveCardButton() {
 export { clickToActiveCardButton };
 
 
-
-    // console.log(params[:selection]);
-
-    // if (params[:selection].includes(params[:id].toString())) {
-
-    //   p.classList.add("card-image-button-active")
-    // };

@@ -6,6 +6,21 @@
  padding-bottom: 15px;
  margin-bottom: 30px;
  margin-top: 30px;
+ position: relative;
+ .hover-card {
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 3000000;
+  transition: all ease 0.3s;
+  overflow: hidden;
+  .open {
+    height: 100%;
+  }
+ }
 }
 .card-image {
   background-image: asset-url('university.jpg');

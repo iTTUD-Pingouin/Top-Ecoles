@@ -63,6 +63,12 @@
   }
 }
 
+.open-chevron {
+  .chevron img {
+    transform: rotate(180deg);
+  }
+}
+
 .filter-space-list {
   margin-top: 10px;
 }
