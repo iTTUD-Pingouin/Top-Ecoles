@@ -6,21 +6,31 @@
 
 
 <div class="main-container">
-
-
   <%= render 'components/sidebar_filters' %>
-
   <div class="container container-to-top">
-
-
-
     <%= render 'components/count_and_tags' %>
-
     <div class="results-container">
       <div class="row">
         <% @schools.each do |school| %>
+
+
+
+
+
+
+
+
           <% if school.college %>
+
+
+
+
             <div class="col-xs-12 col-sm-6 col-md-4">
+
+
+
+
+
               <div class="main-card">
                 <div class="card-image">
                   <%= link_to compare_school_path(school), remote: true do %>
@@ -53,13 +63,33 @@
                   <div class="card-rating">
                     <%= link_to schools_path do %>
                       <% 5.times do |star| %>
-                      <%= image_tag "icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
+                        <%= image_tag "icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
+                      <% end %>
                     <% end %>
                   </div>
-                </div>
+
               </div>
+
+
+
+
+
             </div>
+
+
+
+
+
           <% end %>
+
+
+
+
+
+
+
+
+
           <% if school.lycee %>
             <div class="col-xs-12 col-sm-6 col-md-4">
               <div class="main-card">
@@ -71,7 +101,7 @@
                     </p>
                   <% end %>
                 </div>
-                <div class="give-card-space">
+                <div class="give-card-space"></div>
                   <div class="card-school-name">
                     <% if school.name.length > 38 %>
                       <h2>Lycée <%= school.name[0..34] + "..." %></h2>
@@ -100,15 +130,22 @@
                     <% end %>
                   </div>
 
-                </div>
+
               </div>
             </div>
           <% end %>
+
+
+
+
+
+
+
+
         <% end %>
       </div>
     </div>
   </div>
-
 </div>
 
 

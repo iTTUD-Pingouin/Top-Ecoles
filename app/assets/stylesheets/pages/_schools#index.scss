@@ -33,11 +33,34 @@
   padding-top: 5px;
   padding-bottom: 10px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 }
 
 .filter-title:hover {
   border-top: 1px solid rgba(260,260,260,.6);
   border-bottom: 1px solid rgba(260,260,260,.6);
+}
+
+
+.pastille {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #E67E22;
+  margin-top: 10px;
+  margin-left: 11px;
+}
+
+.filter-and-pastille {
+  display: flex;
+}
+
+.chevron {
+  img {
+    width: 20px;
+    margin-right: 10px;
+  }
 }
 
 .filter-space-list {
@@ -104,3 +127,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+
+
+
