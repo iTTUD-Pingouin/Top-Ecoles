@@ -1,33 +1,41 @@
-.search-results-container{
-  margin-left: 20px;
-  margin-right: 20px;
+.selection-filter-container{
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  margin-top:30px;
+  min-height: 150px;
+  border-radius: 5px;
+  background: #424242;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
 }
+.selection-filter-item {
+  padding: 10px 15px;
+  min-height: 50px;
+  margin: 3px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.selection-filter-button input:checked + label {
 
-.filterz{
+}
+.selection-card-school-main {
  border-radius: 5px;
  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
  padding-bottom: 15px;
  margin-bottom: 30px;
  margin-top: 30px;
  border: 1px solid #ddd;
- min-height: 100px;
-}
-.card-school-main {
- border-radius: 5px;
- box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
- padding-bottom: 15px;
- margin-bottom: 30px;
- margin-top: 30px;
- border: 1px solid #ddd;
 }
 
-.card-image {
+.selection-card-image {
   background-image: asset-url('university.jpg');
   background-size: cover;
   height: 200px;
   position: relative;
   border-radius: 5px 5px 0 0;
-  .card-image-button {
+  .selection-card-image-button {
     position: absolute;
     text-align: center;
     a {
@@ -44,7 +52,7 @@
     opacity: 0.75;
   }
 }
-.card-school-category{
+.selection-card-school-category{
   background-color: white;
   border-radius: 2px;
   border: 1px solid #ddd;
