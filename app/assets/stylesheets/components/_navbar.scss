@@ -4,6 +4,17 @@
   height: 120px;
 }
 
+.navbar-selection {
+  background-color: $blue;
+  p {
+    color: white;
+  }
+}
+
+.navbar-selection #orangefil {
+  color: $orange !important;
+}
+
 
 .navbarTE-left {
   min-width: 300px;
@@ -27,6 +38,7 @@
   p {
     margin-right: 10px;
   }
+
 }
 
 .display_none {

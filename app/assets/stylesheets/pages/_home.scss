@@ -71,6 +71,7 @@
 
   input:hover + label {
     color: rgba(66, 66, 66, 0.8);
+    cursor: pointer;
   }
 
   input:checked + label {

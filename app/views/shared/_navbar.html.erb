@@ -1,5 +1,12 @@
 
-<div class="navbar-topecole">
+
+<% if current_page?(selection_schools_path)%>
+  <div class="navbar-topecole navbar-selection">
+<% else %>
+  <div class="navbar-topecole">
+<% end %>
+
+
   <div class="navbarTE-left text-center">
     <%= link_to root_path do %>
       <h1> Topecoles </h1>

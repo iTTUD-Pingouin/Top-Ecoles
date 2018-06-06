@@ -1,30 +1,8 @@
-.search-results-container{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.filterz{
- border-radius: 5px;
- box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
- padding-bottom: 15px;
- margin-bottom: 30px;
- margin-top: 30px;
- border: 1px solid #ddd;
- min-height: 100px;
-}
-.card-school-main {
- border-radius: 5px;
- box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
- padding-bottom: 15px;
- margin-bottom: 30px;
- margin-top: 30px;
- border: 1px solid #ddd;
-}
-
 .card-image {
+  display: none;
   background-image: asset-url('university.jpg');
   background-size: cover;
-  height: 200px;
+  height: 100px;
   position: relative;
   border-radius: 5px 5px 0 0;
   .card-image-button {
@@ -44,13 +22,112 @@
     opacity: 0.75;
   }
 }
+
+.compare-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.sticky {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 12;
+  background-color: $light-gray;
+  width: 100%;
+}
+
+.filters-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.card-school-main {
+  width: 450px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  margin-right:15px;
+  margin-left:15px;
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  padding-left: 20px;
+  padding-right: 20px;
+  h2 {
+    font-size: 28px;
+  }
+}
+
 .card-school-category{
   background-color: white;
   border-radius: 2px;
   border: 1px solid #ddd;
   padding: 10px 15px;
   margin-bottom: 20px;
-  margin-left: 25px;
-  margin-right: 25px;
   margin-top: 25px;
+  h2 {
+    font-size: 24px;
+  }
 }
+
+
+
+.btn-filter-selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: lighter;
+  font-size: 24px;
+  height: 35px;
+  border: 1px solid rgba(30,30,30,0.3);
+  border-radius: 10px;
+  color: rgba(66, 66, 66, 0.6);
+  padding-left: 20px;
+  padding-right: 20px;
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+    color: rgba(66, 66, 66, 0.8);
+    cursor: pointer;
+  }
+}
+
+.active-filter-selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: lighter;
+  font-size: 24px;
+  height: 35px;
+
+  border-radius: 10px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+
+  color: white !important;
+  background-color: $orange !important;
+  border: 0px solid rgba(30,30,30,0.3) !important;
+  box-shadow: 1px 1px 3px rgba(30,30,30,0.7) !important;
+  }
+
+
+
+
+.hide-filter {
+  display: none;
+  transition: all ease 5s;
+}
+
+
+
+
+
+
