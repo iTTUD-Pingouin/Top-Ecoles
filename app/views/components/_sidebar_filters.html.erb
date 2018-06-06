@@ -5,21 +5,36 @@
         <!------------------ SEARCH BAR AND TYPE  ------------>
 
         <div class="filter-title">
-          <h2 type="button" data-toggle="collapse" data-target="#demo8">Lieu</h2>
+          <div class="filter-and-pastille">
+            <h2 type="button" data-toggle="collapse" data-target="#demo8">Lieu</h2>
+            <% if params[:city] == "" %>
+              <div></div>
+            <% else %>
+              <div class="pastille"></div>
+            <% end %>
+          </div>
+
+          <div class="chevron">
+            <%= image_tag "chevronbas1754127"%>
+          </div>
         </div>
         <div id="demo8" class="collapse">
           <%= form_tag('/schools', method: :get )  do %>
             <div class="all-checkboxes">
               <%= text_field_tag('city', nil, placeholder: 'Ville', class:"form-control rounded-tft2") %>
             </div>
-          <% end %>
+          <%# end %>
         </div>
 
         <div class="filter-title">
           <h2 type="button" data-toggle="collapse" data-target="#demo9">Type d'établissement</h2>
+          <% if params[:type] %>
+            <div class="pastille"></div>
+          <% end %>
         </div>
+
         <div id="demo9" class="collapse">
-          <%= form_tag('/schools', method: :get )  do %>
+          <%#= form_tag('/schools', method: :get )  do %>
             <div class="all-checkboxes">
 
               <div class="btn-group-toggle2" >
@@ -55,6 +70,9 @@
       <% if @search.aggregations.key?("college.sections") %>
         <div class="filter-title">
           <h2 type="button" data-toggle="collapse" data-target="#demo">Sections</h2>
+          <% if params["college.sections"] %>
+            <div class="pastille"></div>
+          <% end %>
         </div>
         <div id="demo" class="collapse">
           <% if @filters.key?("college.sections") %>
@@ -75,6 +93,9 @@
       <% if @search.aggregations.key?("college.statut") %>
         <div class="filter-title">
           <h2 type="button" data-toggle="collapse" data-target="#demo2">Statut</h2>
+          <% if params["college.statut"]  %>
+            <div class="pastille"></div>
+          <% end %>
         </div>
         <div id="demo2" class="collapse">
           <% if @filters.key?("college.statut") %>
@@ -95,6 +116,9 @@
       <% if @search.aggregations.key?("college.activities") %>
         <div class="filter-title">
           <h2 type="button" data-toggle="collapse" data-target="#demo7">Extra-scolaire</h2>
+          <% if params["college.activities"]  %>
+            <div class="pastille"></div>
+          <% end %>
         </div>
         <div id="demo7" class="collapse">
           <% if @filters.key?("college.activities") %>
@@ -119,6 +143,9 @@
       <% if @search.aggregations.key?("lycee_filieres.name") %>
         <div class="filter-title">
           <h2 type="button" data-toggle="collapse" data-target="#demo3">Filières</h2>
+          <% if params["lycee_filieres.name"]  %>
+            <div class="pastille"></div>
+          <% end %>
         </div>
         <div id="demo3" class="collapse">
           <% if @filters.key?("lycee_filieres.name") %>
@@ -139,6 +166,9 @@
       <% if @search.aggregations.key?("lycee_filieres.mention_rate") %>
         <div class="filter-title">
           <h2 type="button" data-toggle="collapse" data-target="#demo4">Taux de réussite global</h2>
+          <% if params["lycee_filieres.mention_rate"]  %>
+            <div class="pastille"></div>
+          <% end %>
         </div>
         <div id="demo4" class="collapse">
           <% if @filters.key?("lycee_filieres.mention_rate") %>
@@ -167,6 +197,9 @@
       <% if @search.aggregations.key?("lycee.sections") %>
         <div class="filter-title">
           <h2 type="button" data-toggle="collapse" data-target="#demo5">Sections</h2>
+          <% if params["lycee.sections"]  %>
+            <div class="pastille"></div>
+          <% end %>
         </div>
         <div id="demo5" class="collapse">
           <% if @filters.key?("lycee.sections") %>
@@ -187,6 +220,9 @@
       <% if @search.aggregations.key?("lycee.statut") %>
         <div class="filter-title">
           <h2 type="button" data-toggle="collapse" data-target="#demo6">Statut</h2>
+          <% if params["lycee.statut"]  %>
+            <div class="pastille"></div>
+          <% end %>
         </div>
         <div id="demo6" class="collapse">
           <% if @filters.key?("lycee.statut") %>
