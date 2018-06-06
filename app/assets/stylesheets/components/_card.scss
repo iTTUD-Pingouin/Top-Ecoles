@@ -118,9 +118,34 @@
 }
 
 
+.right-link:hover {
+  cursor: pointer;
+  background: rgba(40,40,40,.4);
+  color: white;
+  border-radius: 0 0 5px 0;
+}
+
+.left-link:hover {
+  cursor: pointer;
+  background: rgba(40,40,40,.4);
+  color: white;
+  border-radius: 0 0 0 5px;
+}
+
+.right-link2:hover {
+  cursor: pointer;
+  background: rgba(40,40,40,.4);
+  color: white;
+  border-radius: 0 0 5px 0;
+}
 
 
-
+.left-link2:hover {
+  cursor: pointer;
+  background: rgba(40,40,40,.4);
+  color: white;
+  border-radius: 0 0 5px 0;
+}
 
 
 
@@ -235,6 +260,7 @@
     border-top: 1px solid rgba(40,40,40,.1);
     width: 50%;
     padding-top: 10px;
+    height: 54px;
   }
   .left-link2 {
     border-right: 1px solid rgba(40,40,40,.1);
@@ -244,6 +270,10 @@
     }
   }
   .right-link2 {
+    cursor: pointer;
+    background: rgba(40,40,40,.4);
+    color: white;
+    border-radius: 0 0 5px 0;
     p{
       margin: 0;
     }
