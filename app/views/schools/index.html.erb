@@ -7,32 +7,18 @@
 
 <div class="main-container">
   <%= render 'components/sidebar_filters' %>
-  <div class="container container-to-top">
+  <div class="container">
     <%= render 'components/count_and_tags' %>
+
+    <p>Sélectionnez les écoles que vous souhaitez comparer</p>
     <div class="results-container">
       <div class="row">
         <% @schools.each do |school| %>
 
-
-
-
-
-
-
-
           <% if school.college %>
-
-
-
-
             <div class="col-xs-12 col-sm-6 col-md-4">
-
-
-
-
-
               <div class="main-card">
-                <div class="card-image">
+                <div class="card-image2">
                   <%= link_to compare_school_path(school), remote: true do %>
 
                     <p class= "card-image-button<%= session[:selection]&.include?(school.id.to_s) ? " card-image-button-active" : "" %>" >
@@ -68,32 +54,23 @@
                     <% end %>
                   </div>
 
+
+                  <div class="links-bottom-card">
+                    <div class="link-bottom-card text-center right-link">
+                      <p>Fiche complète</p>
+                    </div>
+                    <div class="link-bottom-card text-center">
+                      <p>En savoir plus</p>
+                    </div>
+                  </div>
               </div>
-
-
-
-
-
             </div>
-
-
-
-
-
           <% end %>
-
-
-
-
-
-
-
-
 
           <% if school.lycee %>
             <div class="col-xs-12 col-sm-6 col-md-4">
               <div class="main-card">
-                <div class="card-image">
+                <div class="card-image2">
                   <%= link_to compare_school_path(school), remote: true do %>
 
                     <p class= "card-image-button<%= session[:selection]&.include?(school.id.to_s) ? " card-image-button-active" : "" %>" >
@@ -130,7 +107,18 @@
                     <% end %>
                   </div>
 
+                  <div class="links-bottom-card">
+                    <div class="link-bottom-card text-center right-link">
+                      <p>Fiche complète</p>
+                    </div>
+                    <div class="link-bottom-card text-center">
+                      <p>En savoir plus</p>
+                    </div>
+                  </div>
 
+                <div class="hover-card">
+                  hello
+                </div>
               </div>
             </div>
           <% end %>

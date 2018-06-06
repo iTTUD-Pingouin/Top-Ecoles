@@ -1,28 +1,23 @@
-<!-- <div class="navbar-topecole">
-  <div class="navbarTE-left text-center">
-    <%= link_to root_path do %>
-      <h1> Topécoles </h1>
-    <% end %>
-  </div>
 
-
-  <div class="navbarTE-right">
-    <div class="hat-notifs">
-      <h1 id="mon_comparateur_count">
-        <%= session[:selection].size if !session[:selection].nil? %>
-
-      </h1>
-
-      <p>Mon comparateur</p>
-      <%= image_tag "Icons/graduation-hat.svg", width: 70%>
-    </div>
-  </div>
-</div>
- -->
 <div class="navbar-topecole">
   <div class="navbarTE-left text-center">
     <%= link_to root_path do %>
       <h1> Topecoles </h1>
+    <% end %>
+  </div>
+  <div class="filarianne">
+    <p>Recherchez</p>
+    <p>></p>
+    <% if current_page?(selection_schools_path) %>
+      <p>Filtrez</p>
+    <% else %>
+      <p id="orangefil">Filtrez</p>
+    <% end %>
+    <p>></p>
+    <% if current_page?(selection_schools_path) %>
+      <p id="orangefil">Comparez</p>
+    <% else %>
+      <p>Comparez</p>
     <% end %>
   </div>
 </div>

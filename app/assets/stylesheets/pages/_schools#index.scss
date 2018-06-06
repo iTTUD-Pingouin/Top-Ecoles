@@ -2,10 +2,17 @@
 .main-container {
   display: flex;
 }
+
+#orangefil {
+
+    color: $orange;
+
+}
+
 #sidebar-filters {
   background-color: $blue;
   flex: 0 0 300px;
-  padding-left: 20px;
+  padding-left: 15px;
   height: 150vh;
   position: sticky;
   top: 0;
@@ -15,12 +22,21 @@
   a {
     color: white;
     font-size: 16px;
+
   }
   // position: sticky !important; /* !important to override Gmaps inline CSS */
   // top: 0 !important;
 }
 
+.niveau-scolaire-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  margin-left: -8px;
+}
+
 .filters {
+  width: 271px;
   h2 {
     font-size: 24px;
     margin: 0;
@@ -59,7 +75,13 @@
 .chevron {
   img {
     width: 20px;
-    margin-right: 10px;
+    margin-right: 7px;
+  }
+}
+
+.open-chevron {
+  .chevron img {
+    transform: rotate(180deg);
   }
 }
 
@@ -98,7 +120,8 @@
   }
 
   input:hover + label {
-    color: rgba(66, 66, 66, 0.8);
+    cursor: pointer;
+    text-decoration: underline;
   }
 
   input:checked + label {

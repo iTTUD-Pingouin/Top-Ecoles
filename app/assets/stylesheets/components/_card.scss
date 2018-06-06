@@ -3,11 +3,25 @@
  border: 0.2px black;
  border-radius: 5px;
  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
- padding-bottom: 15px;
  margin-bottom: 30px;
  margin-top: 30px;
+ position: relative;
+ .hover-card {
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 3000000;
+  transition: all ease 0.3s;
+  overflow: hidden;
+  .open {
+    height: 100%;
+  }
+ }
 }
-.card-image {
+.card-image2 {
   background-image: asset-url('university.jpg');
   background-size: cover;
   height: 200px;
@@ -16,17 +30,17 @@
   .card-image-button {
     position: absolute;
     text-align: center;
-    color: white;
+    color: $light-blue;
     font-size: 30px;
     font-weight: bolder;
     margin: 0px;
-    bottom: -24px;
-    right: 19px;
-    background: #424242;
+    bottom: 151px;
+    right: 7px;
+    background: rgba(46, 117, 182, 0.7);
     border-radius: 50%;
     width: 42px;
     /* height: 50px; */
-    opacity: 0.75;
+
   }
 }
 .card-school-name {
@@ -34,7 +48,7 @@
   h2 {
     font-size: 28px;
     color: #404040;
-    margin: 0;
+    margin-top: -19px;
   }
   padding: 20px 30px 0px 30px;
 }
@@ -43,6 +57,7 @@
   padding:  11px 30px 19px 30px;
   h5 {
     opacity: 0.7;
+    margin-top: -16px;
   }
 }
 
@@ -63,6 +78,7 @@
 .card-image-button-active {
   background-color: #F09000 !important;
   opacity: 1 !important;
+  color: $blue !important;
 }
 
 
@@ -81,3 +97,19 @@
 .give-card-space {
   margin: 20px 0px;
 }
+
+
+.links-bottom-card {
+  display: flex;
+  margin-top: 30px;
+  .link-bottom-card {
+    border-top: 1px solid rgba(40,40,40,.1);
+    padding-top: 10px;
+    width: 50%;
+  }
+  .right-link {
+    border-right: 1px solid rgba(40,40,40,.1);
+  }
+}
+
+
