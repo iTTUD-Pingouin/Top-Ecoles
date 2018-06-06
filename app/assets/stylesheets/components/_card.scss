@@ -49,7 +49,7 @@
   h2 {
     font-size: 28px;
     color: #404040;
-    margin: 0;
+    margin-top: -19px;
   }
   padding: 20px 30px 0px 30px;
 }
@@ -58,6 +58,7 @@
   padding:  11px 30px 19px 30px;
   h5 {
     opacity: 0.7;
+    margin-top: -16px;
   }
 }
 
@@ -78,6 +79,7 @@
 .card-image-button-active {
   background-color: #F09000 !important;
   opacity: 1 !important;
+  color: $blue !important;
 }
 
 

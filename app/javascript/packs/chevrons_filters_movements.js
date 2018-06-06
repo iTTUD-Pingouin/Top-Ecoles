@@ -11,32 +11,62 @@ function moveChevrons() {
   const filter9 = document.getElementById('filter9');
 
 
+if (filter1 !== null) {
   filter1.addEventListener("click", (event) => {
     event.currentTarget.classList.toggle("open-chevron");
    });
+}
 
 
-  filter8.addEventListener("click", (event) => {
-    event.currentTarget.classList.toggle("open-chevron");
-   });
-
-  filter9.addEventListener("click", (event) => {
-    event.currentTarget.classList.toggle("open-chevron");
-   });
-
+if (filter2 !== null) {
   filter2.addEventListener("click", (event) => {
     event.currentTarget.classList.toggle("open-chevron");
    });
+}
 
-  filter7.addEventListener("click", (event) => {
-    event.currentTarget.classList.toggle("open-chevron");
-   });
 
+if (filter3 !== null) {
   filter3.addEventListener("click", (event) => {
     event.currentTarget.classList.toggle("open-chevron");
    });
+}
+
+if (filter4 !== null) {
+  filter4.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("open-chevron");
+   });
+}
 
 
+if (filter5 !== null) {
+  filter5.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("open-chevron");
+   });
+}
+
+if (filter6 !== null) {
+  filter6.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("open-chevron");
+   });
+}
+
+if (filter7 !== null) {
+  filter7.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("open-chevron");
+   });
+}
+
+if (filter8 !== null) {
+  filter8.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("open-chevron");
+   });
+}
+
+if (filter9 !== null) {
+  filter9.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("open-chevron");
+   });
+}
 
 
 
