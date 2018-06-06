@@ -1,19 +1,12 @@
 
 <div class="search-results-container">
-  <div class="filterz">
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-    <div class="tag"><p>Bougna</p></div>
-  </div>
+<%= form_tag schools_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a movie"
+  %>
+<% end %>
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="card-school-main">
