@@ -22,7 +22,7 @@
   }
  }
 }
-.card-image {
+.card-image2 {
   background-image: asset-url('university.jpg');
   background-size: cover;
   height: 200px;
@@ -31,17 +31,17 @@
   .card-image-button {
     position: absolute;
     text-align: center;
-    color: white;
+    color: $light-blue;
     font-size: 30px;
     font-weight: bolder;
     margin: 0px;
-    bottom: 140px;
-    right: 100px;
-    background: #424242;
+    bottom: 151px;
+    right: 7px;
+    background: rgba(46, 117, 182, 0.7);
     border-radius: 50%;
     width: 42px;
     /* height: 50px; */
-    opacity: 0.75;
+
   }
 }
 .card-school-name {
