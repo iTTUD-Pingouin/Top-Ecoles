@@ -6,6 +6,7 @@
  margin-bottom: 30px;
  margin-top: 30px;
  position: relative;
+ background-color: white;
  .hover-card {
   position: absolute;
   bottom: 0;
@@ -73,12 +74,13 @@
 .card-image-button:hover {
   background-color: #F09000;
   opacity: 1;
+  color: white;
 }
 
 .card-image-button-active {
   background-color: #F09000 !important;
   opacity: 1 !important;
-  color: $blue !important;
+  color: white !important;
 }
 
 
@@ -127,6 +129,10 @@
 
 // HOVER CARDS ------------------------------------------------------
 
+.hover-card {
+  border-radius: 5px;
+}
+
 .back-card-school-name-and-address {
   padding-top: 20px;
   padding-left: 20px;
@@ -136,6 +142,7 @@
   }
 }
 
+// ICONS---------------
 
 .back-card-icons {
   display: flex;
@@ -148,37 +155,100 @@
   display: block;
   align-items: center;
   width: 32%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 11.5px;
+  padding-bottom: 11.5px;
   p {
     margin: 0;
+    font-size: 16px;
   }
 }
 .back-cantine {
+  display: block;
+  align-items: center;
   width: 32%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 11.5px;
+  padding-bottom: 11.5px;
   p {
     margin: 0;
+    font-size: 16px;
   }
 }
 .back-pensionnat {
+  display: block;
+  align-items: center;
   width: 32%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 11.5px;
+  padding-bottom: 11.5px;
   p {
     margin: 0;
+    font-size: 16px;
+  }
+}
+
+// STATS -----------------
+
+.back-card-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(40,40,40,.1);
+}
+
+.back-card-stats-blocks {
+  width: 33%;
+  padding-top: 11.5px;
+  padding-bottom: 11.5px;
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+  h3 {
+    margin: 0;
+    font-family: $counters;
+    font-size: 32px;
+    color: $light-blue;
+  }
+
+}
+
+.small-gray-data {
+  h3 {
+    color: rgba(40,40,40,.3) !important;
+    font-size: 28px !important;
+  }
+}
+
+.orange-data {
+  h3 {
+    color: rgba(255, 192, 0, 1);
   }
 }
 
 
+// LINKS BUTTON HOVER CARD  -----------------
 
-
-
-
-
-
-
+.links-bottom-card2 {
+  display: flex;
+  margin-top: 6px;
+  width: 361px;
+  .link-bottom-card2 {
+    border-top: 1px solid rgba(40,40,40,.1);
+    width: 50%;
+    padding-top: 10px;
+  }
+  .left-link2 {
+    border-right: 1px solid rgba(40,40,40,.1);
+    height: 49px;
+    p{
+      margin: 0;
+    }
+  }
+  .right-link2 {
+    p{
+      margin: 0;
+    }
+  }
+}
 
 
 
