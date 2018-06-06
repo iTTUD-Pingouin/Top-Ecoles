@@ -6,7 +6,7 @@
         <p> <%= @schools.count %> écoles</p>
       </div>
 
-      <% if params[:city] %>
+      <% if params[:city] && params[:city] != "" %>
         <div class="tag">
             <p><%=params[:city].capitalize %></p>
 
