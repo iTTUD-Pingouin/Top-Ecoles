@@ -35,6 +35,13 @@ function moveChevrons() {
   filter3.addEventListener("click", (event) => {
     event.currentTarget.classList.toggle("open-chevron");
    });
+
+
+
+
+
+
+
 };
 
 

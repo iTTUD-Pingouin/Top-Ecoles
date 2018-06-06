@@ -46,23 +46,24 @@
         <div id="demo9" class="collapse">
           <%#= form_tag('/schools', method: :get )  do %>
             <div class="all-checkboxes">
-
-              <div class="btn-group-toggle2" >
-                <%= radio_button_tag 'type', "primaire", false %>
-                <%= label_tag :type_primaire, "Primaire" %>
-              </div>
-              <div class="btn-group-toggle2" >
-                <%= radio_button_tag 'type', "college", (params[:type] == "college" ? true : false)
-                 %>
-                <%= label_tag :type_college, "Collège" %>
-              </div>
-              <div class="btn-group-toggle2" >
-                <%= radio_button_tag 'type', "lycee", (params[:type] == "lycee" ? true : false)%>
-                <%= label_tag :type_lycee, "Lycée"%>
-              </div>
-              <div class="btn-group-toggle2" >
-                <%= radio_button_tag 'type', "sup", false%>
-                <%= label_tag :type_sup, "Ecole Sup"%>
+              <div class="niveau-scolaire-checkboxes">
+                <div class="btn-group-toggle2" >
+                  <%= radio_button_tag 'type', "primaire", false %>
+                  <%= label_tag :type_primaire, "Primaire" %>
+                </div>
+                <div class="btn-group-toggle2" >
+                  <%= radio_button_tag 'type', "college", (params[:type] == "college" ? true : false)
+                   %>
+                  <%= label_tag :type_college, "Collège" %>
+                </div>
+                <div class="btn-group-toggle2" >
+                  <%= radio_button_tag 'type', "lycee", (params[:type] == "lycee" ? true : false)%>
+                  <%= label_tag :type_lycee, "Lycée"%>
+                </div>
+                <div class="btn-group-toggle2" >
+                  <%= radio_button_tag 'type', "sup", false%>
+                  <%= label_tag :type_sup, "Ecole Sup"%>
+                </div>
               </div>
             </div>
 

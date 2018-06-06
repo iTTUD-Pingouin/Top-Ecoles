@@ -1,6 +1,6 @@
 .navbar-topecole {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 120px;
 }
 
@@ -20,11 +20,14 @@
 }
 
 
-// .navbarTE-right {
-//   padding-top: 10px;
-//   padding-right: 30px;
-
-// }
+.filarianne {
+  display: flex;
+  margin-left: 118px;
+  margin-top: 48px;
+  p {
+    margin-right: 10px;
+  }
+}
 
 .display_none {
   display: none;
