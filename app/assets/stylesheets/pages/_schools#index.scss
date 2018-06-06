@@ -22,10 +22,18 @@
   a {
     color: white;
     font-size: 16px;
-
+    opacity: .6;
   }
   // position: sticky !important; /* !important to override Gmaps inline CSS */
   // top: 0 !important;
+}
+
+.filter-active {
+  opacity: 1 !important;
+}
+
+.hidesuplink {
+  display: none;
 }
 
 .niveau-scolaire-checkboxes {

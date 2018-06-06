@@ -16,7 +16,7 @@
   z-index: 3000000;
   transition: all ease 0.3s;
   overflow: hidden;
-  .open {
+  &.open {
     height: 100%;
   }
  }
@@ -107,9 +107,91 @@
     padding-top: 10px;
     width: 50%;
   }
-  .right-link {
+  .left-link {
     border-right: 1px solid rgba(40,40,40,.1);
   }
+  .right-link {
+
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+// HOVER CARDS ------------------------------------------------------
+
+.back-card-school-name-and-address {
+  padding-top: 20px;
+  padding-left: 20px;
+  h4 {
+    color: #404040;
+    margin: 0;
+  }
+}
+
+
+.back-card-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(40,40,40,.1);
+}
+
+.back-geoloc {
+  display: block;
+  align-items: center;
+  width: 32%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  p {
+    margin: 0;
+  }
+}
+.back-cantine {
+  width: 32%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  p {
+    margin: 0;
+  }
+}
+.back-pensionnat {
+  width: 32%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  p {
+    margin: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

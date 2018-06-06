@@ -55,18 +55,72 @@
                   </div>
 
 
-                  <div class="links-bottom-card">
-                    <div class="link-bottom-card text-center right-link">
+                  <div class="links-bottom-card" >
+                    <div class="link-bottom-card text-center left-link">
                       <p>Fiche complète</p>
                     </div>
-                    <div class="link-bottom-card text-center">
+                    <div class="link-bottom-card text-center en-savoir-plus" type="button" >
                       <p>En savoir plus</p>
                     </div>
                   </div>
+
+
+
+<!-------------------------------------- COLLEGE HOVER CARD ----------------------------------->
+
+                  <div class="hover-card">
+                    <div class="back-card-school-name-and-address">
+                      <h4><%= school.name %></h4>
+                      <p><%= school.college.address %></p>
+                    </div>
+
+                    <div class="back-card-icons">
+                      <div class="back-geoloc text-center">
+                        <%= image_tag "Icons/np_location_304559_000000.svg", width: 40%>
+                        <p>12km</p>
+                      </div>
+                      <div class="back-cantine text-center">
+                        <%= image_tag "Icons/Type_ou_niveau_noun_1698517.svg", width: 40%>
+                        <p>Cantine</p>
+                      </div>
+                      <div class="back-pensionnat text-center">
+                        <%= image_tag "Icons/Pensionat_969313_000000.svg", width: 40%>
+                        <p>Pensionnat</p>
+                      </div>
+                    </div>
+
+                    <div class="back-card-stats">
+                    </div>
+
+                    <div class="back-card-stats">
+                    </div>
+
+                    <div class="back-card-fees-and-stats">
+
+                    </div>
+
+                    <div class="links-bottom-card" >
+                      <div class="link-bottom-card text-center left-link">
+                        <p>Fiche complète</p>
+                      </div>
+                      <div class="link-bottom-card text-center en-savoir-plus2" type="button" >
+                        <p>En savoir plus</p>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
               </div>
             </div>
           <% end %>
 
+
+
+
+<!-------------------------------------- LYCEE CARDS ----------------------------------->
           <% if school.lycee %>
             <div class="col-xs-12 col-sm-6 col-md-4">
               <div class="main-card">
@@ -108,17 +162,24 @@
                   </div>
 
                   <div class="links-bottom-card">
-                    <div class="link-bottom-card text-center right-link">
+                    <div class="link-bottom-card text-center left-link">
                       <p>Fiche complète</p>
                     </div>
-                    <div class="link-bottom-card text-center">
+                    <div class="link-bottom-card text-center en-savoir-plus" type="button">
                       <p>En savoir plus</p>
                     </div>
                   </div>
 
-                <div class="hover-card">
-                  hello
-                </div>
+                  <div class="hover-card">
+                    <div class="links-bottom-card" >
+                      <div class="link-bottom-card text-center left-link">
+                        <p>Fiche complète</p>
+                      </div>
+                      <div class="link-bottom-card text-center en-savoir-plus2" type="button" >
+                        <p>En savoir plus</p>
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
           <% end %>

@@ -101,8 +101,11 @@
           <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["college.sections"]["buckets"] || @search.aggregations["college.sections"]["college.sections"]["buckets"]).each do |filter| %>
               <li>
-                <%= link_to schools_path(@filters.merge("college.sections" => filter["key"])) do %>
+                <%= link_to schools_path(@filters.merge("college.sections" => filter["key"])), class:  @filters["college.sections"] == filter["key"] ? "filter-active" : "" do %>
                   <%= filter["key"] %> (<%= filter["doc_count"] %>)
+                  <%= link_to schools_path(@filters.merge("college.sections" => nil)), class:  @filters["college.sections"] == filter["key"] ? "" : "hidesuplink" do %>
+                    <i class="fas fa-times"></i>
+                  <% end %>
                 <% end %>
               </li>
             <% end %>
@@ -135,7 +138,7 @@
           <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["college.statut"]["buckets"] || @search.aggregations["college.statut"]["college.statut"]["buckets"]).each do |filter| %>
               <li>
-                <%= link_to schools_path(@filters.merge("college.statut" => filter["key"])) do %>
+                <%= link_to schools_path(@filters.merge("college.statut" => filter["key"])), class:  @filters["college.statut"] == filter["key"] ? "filter-active" : "" do %>
                   <%= filter["key"] %> (<%= filter["doc_count"] %>)
                 <% end %>
               </li>
@@ -169,7 +172,7 @@
           <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["college.activities"]["buckets"] || @search.aggregations["college.activities"]["college.activities"]["buckets"]).each do |filter| %>
               <li>
-                <%= link_to schools_path(@filters.merge("college.activities" => filter["key"])) do %>
+                <%= link_to schools_path(@filters.merge("college.activities" => filter["key"])), class:  @filters["college.activities"] == filter["key"] ? "filter-active" : "" do %>
                   <%= filter["key"] %> (<%= filter["doc_count"] %>)
                 <% end %>
               </li>
@@ -209,7 +212,7 @@
           <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["lycee_filieres.name"]["buckets"] || @search.aggregations["lycee_filieres.name"]["lycee_filieres.name"]["buckets"]).each do |filter| %>
               <li>
-                <%= link_to schools_path(@filters.merge("lycee_filieres.name" => filter["key"])) do %>
+                <%= link_to schools_path(@filters.merge("lycee_filieres.name" => filter["key"])), class:  @filters["lycee_filieres.name"] == filter["key"] ? "filter-active" : "" do %>
                   <%= filter["key"] %> (<%= filter["doc_count"] %>)
                 <% end %>
               </li>
@@ -242,7 +245,7 @@
           <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["lycee_filieres.mention_rate"]["buckets"] || @search.aggregations["lycee_filieres.mention_rate"]["lycee_filieres.mention_rate"]["buckets"]).each do |filter| %>
               <li>
-                <%= link_to schools_path(@filters.merge("lycee_filieres.mention_rate" => filter["key"])) do %>
+                <%= link_to schools_path(@filters.merge("lycee_filieres.mention_rate" => filter["key"])), class:  @filters["lycee_filieres.mention_rate"] == filter["key"] ? "filter-active" : "" do %>
                   <% if filter["key"] == "0.0-70.0" %>
 
                   <% elsif filter["key"] == "70.0-80.0" %>
@@ -282,7 +285,7 @@
           <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["lycee.sections"]["buckets"] || @search.aggregations["lycee.sections"]["lycee.sections"]["buckets"]).each do |filter| %>
               <li>
-                <%= link_to schools_path(@filters.merge("lycee.sections" => filter["key"])) do %>
+                <%= link_to schools_path(@filters.merge("lycee.sections" => filter["key"])), class:  @filters["lycee.sections"] == filter["key"] ? "filter-active" : "" do %>
                   <%= filter["key"] %> (<%= filter["doc_count"] %>)
                 <% end %>
               </li>
@@ -314,7 +317,7 @@
           <ul class="list-unstyled filter-space-list">
             <% (@search.aggregations["lycee.statut"]["buckets"] || @search.aggregations["lycee.statut"]["lycee.statut"]["buckets"]).each do |filter| %>
               <li>
-                <%= link_to schools_path(@filters.merge("lycee.statut" => filter["key"])) do %>
+                <%= link_to schools_path(@filters.merge("lycee.statut" => filter["key"])), class:  @filters["lycee.statut"] == filter["key"] ? "filter-active" : "" do %>
                   <%= filter["key"] %> (<%= filter["doc_count"] %>)
                 <% end %>
               </li>
