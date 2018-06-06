@@ -1,4 +1,13 @@
 
+<div class="hat-notifs2" >
+  <h1 class="orange-counter2">
+    ?
+  </h1>
+  <p>Besoin d'aide</p>
+</div>
+
+
+
 <div class="body-selection">
   <div class="sticky">
     <div class="container">
@@ -6,17 +15,23 @@
         <div class="btn-filter-selection address active-filter-selection">
           <p>Adresse</p>
         </div>
+        <div class="btn-filter-selection commune active-filter-selection">
+          <p>Commune</p>
+        </div>
+
+
         <div class="btn-filter-selection statut active-filter-selection">
           <p>Statut</p>
         </div>
+
+
+
+
         <div class="btn-filter-selection filieres">
           <p>Filières</p>
         </div>
         <div class="btn-filter-selection sections-int">
           <p>Sections internationales</p>
-        </div>
-        <div class="btn-filter-selection commune active-filter-selection">
-          <p>Commune</p>
         </div>
 
       </div>
@@ -30,12 +45,13 @@
         <!-- image -->
         <div class="card-image">
         </div>
-
+        <div class="title-etablissement">
           <% if school.college  %>
             <h2>Collège <%= school.name %></h2>
           <% elsif school.lycee %>
             <h2>Lycée <%= school.name %></h2>
           <% end %>
+        </div>
 
 
         <!------------ address ----------------->
@@ -47,6 +63,11 @@
             <h2><%= school.lycee.address %></h2>
           <% end %>
         </div>
+        <!-- commune -->
+        <div class="card-school-category target-commune ">
+          <p>Commune</p>
+          <h2><%= school.commune %></h2>
+        </div>
         <!------------ status ------------------>
         <div class="card-school-category target-statut ">
           <h2>Statut</h2>
@@ -57,7 +78,7 @@
           <h2>Filières</h2>
           <p>S, ES et L</p>
         </div>
-        <!-- date d'inscription -->
+        <!-- sections int -->
         <div class="card-school-category target-sections-int hide-filter">
           <p>Sections internationales</p>
           <h2>Anglais, Espagnol</h2>
@@ -65,11 +86,8 @@
 
 
 
-        <!-- frais de scolarité -->
-        <div class="card-school-category target-commune ">
-          <p>Commune</p>
-          <h2><%= school.commune %></h2>
-        </div>
+
+        <!------------ A INCLURE ---------------->
 
         <!-- Pensionnat -->
         <div class="card-school-category hide-filter">

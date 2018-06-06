@@ -6,6 +6,18 @@
         <p> <%= @schools.count %> écoles</p>
       </div>
 
+      <% if params[:city] %>
+        <div class="tag">
+            <p><%=params[:city].capitalize %></p>
+
+            <div class="link-sup-tag">
+              <%= link_to schools_path(@filters.merge("city" => nil)) do %>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+
       <% if @filters.key?("college.sections") %>
           <div class="tag">
             <p> Section <%= @filters["college.sections"].capitalize %></p>
