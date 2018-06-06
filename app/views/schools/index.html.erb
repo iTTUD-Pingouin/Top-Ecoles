@@ -57,7 +57,9 @@
 
                   <div class="links-bottom-card" >
                     <div class="link-bottom-card text-center left-link">
-                      <p>Fiche complète</p>
+                      <%= link_to school_path(school) do  %>
+                        <p>Fiche complète</p>
+                      <% end %>
                     </div>
                     <div class="link-bottom-card text-center en-savoir-plus right-link" type="button" >
                       <p>En savoir plus</p>
@@ -136,9 +138,11 @@
                     </div>
 
                     <div class="links-bottom-card2" >
-                      <div class="link-bottom-card2 text-center left-link2">
-                        <p>Fiche complète</p>
-                      </div>
+                        <div class="link-bottom-card2 text-center left-link2">
+                          <%= link_to school_path(school) do  %>
+                            <p>Fiche complète</p>
+                          <% end %>
+                        </div>
                       <div class="link-bottom-card2 text-center en-savoir-plus2 right-link2" type="button" >
                         <p>En savoir plus</p>
                       </div>
@@ -199,9 +203,11 @@
 
                   <div class="links-bottom-card">
                     <div class="link-bottom-card text-center left-link">
-                      <p>Fiche complète</p>
+                      <%= link_to school_path(school) do  %>
+                        <p>Fiche complète</p>
+                      <% end %>
                     </div>
-                    <div class="link-bottom-card text-center en-savoir-plus" type="button">
+                    <div class="link-bottom-card text-center en-savoir-plus right-link" type="button">
                       <p>En savoir plus</p>
                     </div>
                   </div>
@@ -280,7 +286,9 @@
 
                     <div class="links-bottom-card2" >
                       <div class="link-bottom-card2 text-center left-link2">
-                        <p>Fiche complète</p>
+                        <%= link_to school_path(school) do  %>
+                          <p>Fiche complète</p>
+                        <% end %>
                       </div>
                       <div class="link-bottom-card2 text-center en-savoir-plus2 right-link2" type="button" >
                         <p>En savoir plus</p>

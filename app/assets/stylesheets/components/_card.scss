@@ -112,11 +112,12 @@
   .left-link {
     border-right: 1px solid rgba(40,40,40,.1);
   }
-  .right-link {
-
-  }
 }
 
+.link-bottom-card:hover {
+  background: rgba(40,40,40,.4);
+  color: white;
+}
 
 .right-link:hover {
   cursor: pointer;
@@ -128,7 +129,12 @@
 .left-link:hover {
   cursor: pointer;
   background: rgba(40,40,40,.4);
-  color: white;
+  p {
+    color: white;
+  }
+  a {
+    text-decoration: none;
+  }
   border-radius: 0 0 0 5px;
 }
 
@@ -264,11 +270,25 @@
   }
   .left-link2 {
     border-right: 1px solid rgba(40,40,40,.1);
-    height: 49px;
+    height: 54px;
     p{
       margin: 0;
     }
   }
+
+  .left-link2:hover {
+    cursor: pointer;
+    background: rgba(40,40,40,.4);
+    p {
+      color: white;
+    }
+    a {
+      text-decoration: none;
+    }
+    border-radius: 0 0 0 5px;
+  }
+
+
   .right-link2 {
     cursor: pointer;
     background: rgba(40,40,40,.4);
@@ -280,6 +300,27 @@
   }
 }
 
+.links-bottom-card2 a {
+  p {
+    color: #757575;
+    text-decoration: none;
+  }
+  p:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.links-bottom-card a {
+  p {
+    color: #757575;
+    text-decoration: none;
+  }
+  p:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
 
 
 
