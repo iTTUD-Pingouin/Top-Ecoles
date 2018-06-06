@@ -1,8 +1,11 @@
-<div id="displaynonebutton">
-  <% if session[:selection] && session[:selection].size > 0 %>
-    <%= render "counter" %>
-  <% end %>
-</div>
+
+  <div id="displaynonebutton">
+    <%= link_to  selection_schools_path, class: "selection-link" do %>
+        <% if session[:selection] && session[:selection].size > 0 %>
+          <%= render "counter" %>
+        <% end %>
+    <% end %>
+  </div>
 
 
 <div class="main-container">
