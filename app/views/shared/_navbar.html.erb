@@ -28,15 +28,7 @@
     <% if current_page?(selection_schools_path) %>
       <p id="orangefil">Comparer</p>
     <% else %>
-      <% if session[:selection] != nil %>
         <p>Comparer</p>
-      <% elsif session[:selection].size < 1 %>
-        <p>Comparer</p>
-      <% else %>
-        <%= link_to 'Comparer', selection_schools_path  %>
-      <% end %>
-
-
     <% end %>
   </div>
 </div>
