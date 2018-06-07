@@ -103,6 +103,15 @@
   }
 }
 
+.clean-link {
+  left: 10px;
+  bottom: 0;
+  p {
+    font-size: 40px;
+  }
+  position: absolute;
+}
+
 .hat-notifs:hover {
   background: $orange;
   color: white;

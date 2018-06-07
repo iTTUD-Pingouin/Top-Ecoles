@@ -116,4 +116,9 @@ class SchoolsController < ApplicationController
       @counter = false
     end
   end
+
+
+  def clean_list
+    session[:selection] = []
+  end
 end

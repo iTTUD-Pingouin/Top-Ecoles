@@ -10,4 +10,8 @@ Rails.application.routes.draw do
       get "compare", to: "schools#add_to_compare_list"
     end
   end
+
+  get "clean", to: "schools#clean_list"
+
+
 end

@@ -14,6 +14,9 @@
     <%= render 'components/count_and_tags' %>
 
     <p style="font-size: 24px;">Sélectionnez les écoles que vous souhaitez comparer</p>
+    <%= link_to clean_path, remote: true do %>
+      <p>Effacer la sélection</p>
+    <% end %>
     <div class="results-container">
       <div class="row">
         <% @schools.each do |school| %>
@@ -87,7 +90,7 @@
                     <div class="back-card-icons">
                       <div class="back-geoloc text-center">
                         <%= image_tag "Icons/np_location_304559_000000.svg", width: 40%>
-                        <p>12km</p>
+                        <p><%= (1..15).to_a.sample %>km</p>
                       </div>
                       <div class="back-cantine text-center">
                         <%= image_tag "Icons/Type_ou_niveau_noun_1698517.svg", width: 40%>
@@ -102,30 +105,30 @@
                     <div class="back-card-stats">
                       <div class="back-card-stats-blocks text-center">
                         <p>Sections internationales</p>
-                        <h3>4</h3>
+                        <h3><%= school.college.sections.count %></h3>
                       </div>
                       <div class="back-card-stats-blocks text-center">
                         <p>Sections européennes</p>
-                        <h3>6</h3>
+                        <h3><%= (1..7).to_a.sample %></h3>
                       </div>
                       <div class="back-card-stats-blocks text-center">
                         <p>Options <br>matières</p>
-                        <h3>4</h3>
+                        <h3><%= (1..9).to_a.sample %></h3>
                       </div>
                     </div>
 
                     <div class="back-card-stats">
                       <div class="back-card-stats-blocks text-center orange-data">
                         <p>Résultats <br>au bac</p>
-                        <h3>97%</h3>
+                        <h3> <%= (85..99).to_a.sample %>%</h3>
                       </div>
                       <div class="back-card-stats-blocks text-center orange-data">
                         <p>Taux de <br>mention</p>
-                        <h3>69%</h3>
+                        <h3><%= (60..80).to_a.sample %>%</h3>
                       </div>
                       <div class="back-card-stats-blocks text-center orange-data">
                         <p>Mentions <br>très bien</p>
-                        <h3>12%</h3>
+                        <h3><%= (1..35).to_a.sample %>%</h3>
                       </div>
                     </div>
 
@@ -133,15 +136,19 @@
                     <div class="back-card-stats">
                       <div class="back-card-stats-blocks text-center small-gray-data">
                         <p>Classement <br>national</p>
-                        <h3>35</h3>
+                        <h3><%= (1..80).to_a.sample %></h3>
                       </div>
                       <div class="back-card-stats-blocks text-center small-gray-data">
                         <p>Frais de <br>scolarité</p>
-                        <h3>6 500</h3>
+                        <h3><%= [6500, 7000, 7500, 8000, 8500, 9500, 3000].sample%></h3>
                       </div>
                       <div class="back-card-stats-blocks text-center small-gray-data">
-                        <p>Date <br>inscription</p>
-                        <h3>12/10</h3>
+                        <p>Date de <br>rentrée</p>
+                        <h3>
+                          <%= (1..30).to_a.sample %>
+                          /
+                          <%= ["09" , "10" , "11"].sample %>
+                        </h3>
                       </div>
                     </div>
 
@@ -240,7 +247,7 @@
                     <div class="back-card-icons">
                       <div class="back-geoloc text-center">
                         <%= image_tag "Icons/np_location_304559_000000.svg", width: 40%>
-                        <p>12km</p>
+                        <p><%= (1..15).to_a.sample %>km</p>
                       </div>
                       <div class="back-cantine text-center">
                         <%= image_tag "Icons/Type_ou_niveau_noun_1698517.svg", width: 40%>
@@ -255,30 +262,30 @@
                     <div class="back-card-stats">
                       <div class="back-card-stats-blocks text-center">
                         <p>Sections internationales</p>
-                        <h3>4</h3>
+                        <h3><%= school.lycee.sections.count %></h3>
                       </div>
                       <div class="back-card-stats-blocks text-center">
                         <p>Sections européennes</p>
-                        <h3>6</h3>
+                        <h3><%= (1..7).to_a.sample %></h3>
                       </div>
                       <div class="back-card-stats-blocks text-center">
                         <p>Options <br>matières</p>
-                        <h3>4</h3>
+                        <h3><%= (1..9).to_a.sample %></h3>
                       </div>
                     </div>
 
                     <div class="back-card-stats">
                       <div class="back-card-stats-blocks text-center orange-data">
                         <p>Résultats <br>au bac</p>
-                        <h3>97%</h3>
+                        <h3><%= (85..99).to_a.sample %>%</h3>
                       </div>
                       <div class="back-card-stats-blocks text-center orange-data">
                         <p>Taux de <br>mention</p>
-                        <h3>69%</h3>
+                        <h3><%= (60..80).to_a.sample %>%</h3>
                       </div>
                       <div class="back-card-stats-blocks text-center orange-data">
                         <p>Mentions <br>très bien</p>
-                        <h3>12%</h3>
+                        <h3><%= (1..35).to_a.sample %>%</h3>
                       </div>
                     </div>
 
@@ -286,15 +293,17 @@
                     <div class="back-card-stats">
                       <div class="back-card-stats-blocks text-center small-gray-data">
                         <p>Classement <br>national</p>
-                        <h3>35</h3>
+                        <h3><%= (1..80).to_a.sample %></h3>
                       </div>
                       <div class="back-card-stats-blocks text-center small-gray-data">
                         <p>Frais de <br>scolarité</p>
-                        <h3>6 500</h3>
+                        <h3><%= [6500, 7000, 7500, 8000, 8500, 9500, 3000].sample%></h3>
                       </div>
                       <div class="back-card-stats-blocks text-center small-gray-data">
                         <p>Date <br>inscription</p>
-                        <h3>12/10</h3>
+                        <h3><%= (1..30).to_a.sample %>
+                          /
+                          <%= ["09" , "10" , "11"].sample %></h3>
                       </div>
                     </div>
 
@@ -317,12 +326,6 @@
     </div>
   </div>
 </div>
-
-
-
-<button>
-  hello
-</button>
 
 
 
