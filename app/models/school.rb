@@ -96,4 +96,6 @@ class School < ApplicationRecord
 
     return data
   end
+
+  mount_uploader :photo, PhotoUploader
 end

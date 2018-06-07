@@ -9,7 +9,7 @@
 require 'faker'
 require 'csv'
 
-filepath = 'db/sampleschools.csv'
+filepath = 'db/schools-with-photos.csv'
 csv_options = {col_sep: ';', headers: :first_row }
 
 
@@ -17,7 +17,8 @@ puts "Parsing sampleschools csv file ..."
 CSV.foreach(filepath, csv_options) do |row|
   schoolname = row["nom"].gsub(/(Collège |Lycée |privé )/, "")
   school = School.new(name: schoolname, commune: row["commune"], statut: row["statut"])
-  school.save
+  school.remote_photo_url = url(row["photo-batiment"])
+  school.save!
 
   if row["type d'établissement"] == "Collège"
     College.create!(address: row["adresse"], school_id: school.id, statut: school.statut, uai: row['code UAI'], commune: row['commune'])
@@ -38,11 +39,11 @@ CSV.foreach(filepath, csv_options) do |row|
     college = College.find_by(uai: row["U.A.I."][0...8])
     section_size = row["SECTION BI- ET INTERNATIONALE"].size
     college.sections << row["SECTION BI- ET INTERNATIONALE"]
-    college.save
+    college.save!
   elsif (row["Niveau"] == "Lycée") && (Lycee.find_by(uai: row["U.A.I."][0...8]))
     lycee = Lycee.find_by(uai: row["U.A.I."][0...8])
     lycee.sections << row["SECTION BI- ET INTERNATIONALE"]
-    lycee.save
+    lycee.save!
   end
 end
 

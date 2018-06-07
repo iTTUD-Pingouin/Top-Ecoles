@@ -16,6 +16,7 @@ gem 'searchkick', '~> 3.0'
 #seed
 gem 'faker'
 gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 
 gem 'autoprefixer-rails'
