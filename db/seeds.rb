@@ -70,20 +70,20 @@ school = School.create!(name: 'Sacré Coeur', commune: 'Aix-en-Provence', statut
 url = "https://www.immojeunepro.com/bundles/boresidence/uploads/documents/570x366/9c0ec579adbcbc91e698c7308e06c9e19d2a7a00-570x366.jpeg"
 school.remote_photo_url = url
 school.save!
-College.create!(address: '33 cours Mirabeau', school_id: 24, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "BRITANNIQUE"], activities: ["Arts plastiques", "Musique", "Football", "Tennis"])
+College.create!(address: '33 cours Mirabeau', school_id: school.id, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "BRITANNIQUE"], activities: ["Arts plastiques", "Musique", "Football", "Tennis"])
 
 school = School.create!(name: 'Sainte-Marie', commune: 'Aix-en-Provence', statut: 'Privé sous contrat')
 url = "https://www.saintemarie-caen.fr/wp-content/uploads/2017/02/P_index_3.jpg"
 school.remote_photo_url = url
 school.save!
-College.create!(address: '24 avenue des arts et métiers', school_id: 25, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE"], activities: ["Théatre", "Musique", "Cinéma", "Arts plastiques"])
+College.create!(address: '24 avenue des arts et métiers', school_id: school.id, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE"], activities: ["Théatre", "Musique", "Cinéma", "Arts plastiques"])
 
 
 school = School.create!(name: 'Emile Zola', commune: 'Aix-en-Provence', statut: 'Public')
 url = "http://mikestravelguide.com/wp-content/uploads/2013/03/College-Mignet-3-Cezanne-Walk-Aix-en-Provence-France-800x534.jpg"
 school.remote_photo_url = url
 school.save!
-College.create!(address: '2 rue de Rome', school_id: 26, statut: 'Public', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE", "JAPONAISE"], activities: ["Arts plastiques", "Musique", "Football", "Piscine"])
+College.create!(address: '2 rue de Rome', school_id: school.id, statut: 'Public', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE", "JAPONAISE"], activities: ["Arts plastiques", "Musique", "Football", "Piscine"])
 
 puts "3 others Collèges created"
 
