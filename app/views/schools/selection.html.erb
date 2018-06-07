@@ -78,13 +78,21 @@ title="
         </div>
         <!------------ status ------------------>
         <div class="card-school-category target-statut ">
-          <h2>Statut</h2>
-          <p>Etablissement privé</p>
+          <p>Statut</p>
+          <h2><%= school.statut %></h2>
         </div>
         <!------------ filières ----------------->
         <div class="card-school-category target-filieres hide-filter">
-          <h2>Filières</h2>
-          <p>S, ES et L</p>
+          <p>Filières</p>
+          <% if school.lycee %>
+            <h2>
+              <ul class="list-inline">
+              <%school.lycee.filieres.each do |filiere|%>
+                <li><%= filiere.name %></li>
+              <% end %>
+              </ul>
+            </h2>
+          <% end %>
         </div>
         <!-- sections int -->
         <div class="card-school-category target-sections-int hide-filter">
