@@ -15,6 +15,7 @@ gem 'searchkick', '~> 3.0'
 
 #seed
 gem 'faker'
+gem 'cloudinary'
 
 
 gem 'autoprefixer-rails'
