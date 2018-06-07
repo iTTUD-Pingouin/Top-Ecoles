@@ -1,5 +1,12 @@
 
-<div class="hat-notifs2" >
+<div class="hat-notifs2" data-toggle="tooltip" data-placement="left" data-html="true"
+title="
+         <strong>Vous êtes perdu ?</strong>
+         <br>
+         <p>Cochez/décochez les filtres pour comparer les critères qui vous interressent !</p>
+
+         <p>Maintenez le clic enfoncé sur une école pour la positionner où vous le souhaitez !</p>
+       ">
   <h1 class="orange-counter2">
     ?
   </h1>
@@ -19,17 +26,18 @@
           <p>Commune</p>
         </div>
 
-
         <div class="btn-filter-selection statut active-filter-selection">
           <p>Statut</p>
         </div>
 
+        <% verif = @schools.select { |school| school.lycee } %>
+        <% if verif.size > 0 %>
+          <div class="btn-filter-selection filieres">
+            <p>Filières</p>
+          </div>
+        <% end %>
 
 
-
-        <div class="btn-filter-selection filieres">
-          <p>Filières</p>
-        </div>
         <div class="btn-filter-selection sections-int">
           <p>Sections internationales</p>
         </div>

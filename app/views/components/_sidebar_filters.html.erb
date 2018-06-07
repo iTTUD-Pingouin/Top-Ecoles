@@ -48,7 +48,7 @@
             <div class="all-checkboxes">
               <div class="niveau-scolaire-checkboxes">
                 <div class="btn-group-toggle2" >
-                  <%= radio_button_tag 'type', "primaire", false %>
+                  <%#= radio_button_tag 'type', "primaire", false %>
                   <%= label_tag :type_primaire, "Primaire" %>
                 </div>
                 <div class="btn-group-toggle2" >
@@ -61,7 +61,7 @@
                   <%= label_tag :type_lycee, "Lycée"%>
                 </div>
                 <div class="btn-group-toggle2" >
-                  <%= radio_button_tag 'type', "sup", false%>
+                  <%#= radio_button_tag 'type', "sup", false%>
                   <%= label_tag :type_sup, "Ecole Sup"%>
                 </div>
               </div>
@@ -70,7 +70,6 @@
                 <%= submit_tag 'Recherchez votre école !', class: "submit-home-button", id: "submit-search" %>
           <% end %>
         </div>
-
 
 
 

@@ -126,10 +126,12 @@
     border-radius: 3px;
     color: white;
   }
+  label:hover {
+    cursor: pointer;
+  }
 
   input:hover + label {
     cursor: pointer;
-    text-decoration: underline;
   }
 
   input:checked + label {

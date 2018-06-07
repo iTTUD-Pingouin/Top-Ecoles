@@ -68,6 +68,10 @@
     border-radius: 10px;
     color: rgba(66, 66, 66, 0.6);
   }
+  label:hover {
+    cursor: pointer;
+    color: rgba(66, 66, 66, 0.8);
+  }
 
   input:hover + label {
     color: rgba(66, 66, 66, 0.8);

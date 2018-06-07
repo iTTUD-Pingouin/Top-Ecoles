@@ -11,3 +11,7 @@ clickToActiveCardButton();
 moveChevrons();
 clickToEnSavoirPlus();
 selectFilter();
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
