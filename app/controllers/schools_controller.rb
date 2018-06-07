@@ -11,6 +11,7 @@ class SchoolsController < ApplicationController
       "college.statut",
       "college.activities",
       "college.pensionnat",
+
       # aggregats lycee
       "lycee_filieres.name",
       "lycee.sections",

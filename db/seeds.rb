@@ -33,10 +33,13 @@ CSV.foreach(filepath, csv_options) do |row|
 
     pensionnat = [true, false].sample
     college.pensionnat = pensionnat
+    college.rating = (1..5).to_a.sample
 
     college.save!
   elsif row["type d'établissement"] == "Lycée"
-    Lycee.create!(address: row["adresse"], school_id: school.id, statut: school.statut, uai: row['code UAI'], commune: row['commune'])
+    lycee = Lycee.create!(address: row["adresse"], school_id: school.id, statut: school.statut, uai: row['code UAI'], commune: row['commune'])
+    lycee.rating = (1..5).to_a.sample
+    lycee.save!
   end
 end
 
@@ -54,6 +57,7 @@ CSV.foreach(filepath, csv_options) do |row|
   schoolname = row["nom"].gsub(/(Collège |Lycée |privé )/, "")
   school = School.new(name: schoolname, commune: row["commune"], statut: row["statut"])
   school.remote_photo_url = row["photo-batiment"]
+  school.rating = (1..5).to_a.sample
   school.save!
 
   if row["type d'établissement"] == "Collège"
@@ -70,9 +74,12 @@ CSV.foreach(filepath, csv_options) do |row|
     pensionnat = [true, false].sample
     college.pensionnat = pensionnat
 
+    college.rating = (1..5).to_a.sample
+
     college.save!
   elsif row["type d'établissement"] == "Lycée"
-    Lycee.create!(address: row["adresse"], school_id: school.id, statut: school.statut, uai: row['code UAI'], commune: row['commune'])
+    lycee = Lycee.create!(address: row["adresse"], school_id: school.id, statut: school.statut, uai: row['code UAI'], commune: row['commune'])
+    lycee.save!
   end
 end
 
@@ -140,28 +147,5 @@ puts "Creating some filieres"
 end
 puts "Filières added!"
 
-
-puts "Creating 3 others Collèges"
-
-school = School.create!(name: 'Sacré Coeur', commune: 'Aix-en-Provence', statut: 'Privé sous contrat')
-url = "https://www.immojeunepro.com/bundles/boresidence/uploads/documents/570x366/9c0ec579adbcbc91e698c7308e06c9e19d2a7a00-570x366.jpeg"
-school.remote_photo_url = url
-school.save!
-College.create!(address: '33 cours Mirabeau', school_id: school.id, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "BRITANNIQUE"], activities: ["Arts plastiques", "Musique", "Sport"], pensionnat: true)
-
-school = School.create!(name: 'Sainte-Marie', commune: 'Aix-en-Provence', statut: 'Privé sous contrat')
-url = "https://www.saintemarie-caen.fr/wp-content/uploads/2017/02/P_index_3.jpg"
-school.remote_photo_url = url
-school.save!
-College.create!(address: '24 avenue des arts et métiers', school_id: school.id, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE"], activities: ["Théatre", "Musique", "Cinéma", "Arts plastiques"], pensionnat: true)
-
-
-school = School.create!(name: 'Emile Zola', commune: 'Aix-en-Provence', statut: 'Public')
-url = "http://mikestravelguide.com/wp-content/uploads/2013/03/College-Mignet-3-Cezanne-Walk-Aix-en-Provence-France-800x534.jpg"
-school.remote_photo_url = url
-school.save!
-College.create!(address: '2 rue de Rome', school_id: school.id, statut: 'Public', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "DANOISE", "ITALIENNE", "JAPONAISE"], activities: ["Arts plastiques", "Musique", "Sport"], pensionnat: false)
-
-puts "3 others Collèges created"
 
 
