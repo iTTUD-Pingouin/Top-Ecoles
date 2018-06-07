@@ -1,7 +1,7 @@
 class School < ApplicationRecord
-  has_one :college
-  has_one :primaire
-  has_one :lycee
+  has_one :college, dependent: :destroy
+  has_one :primaire, dependent: :destroy
+  has_one :lycee, dependent: :destroy
 
   searchkick
 
