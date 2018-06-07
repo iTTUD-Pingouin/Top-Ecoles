@@ -13,18 +13,28 @@
     <% end %>
   </div>
   <div class="filarianne">
-    <p>Recherchez</p>
-    <p>></p>
-    <% if current_page?(selection_schools_path) %>
-      <p>Filtrez</p>
-    <% else %>
-      <p id="orangefil">Filtrez</p>
+    <%= link_to root_path do %>
+      <p style="color: #757575">Rechercher</p>
     <% end %>
     <p>></p>
     <% if current_page?(selection_schools_path) %>
-      <p id="orangefil">Comparez</p>
+      <%= link_to :back do %>
+        <p>Filtrer</p>
+      <% end %>
     <% else %>
-      <p>Comparez</p>
+      <p id="orangefil">Filtrer</p>
+    <% end %>
+    <p>></p>
+    <% if current_page?(selection_schools_path) %>
+      <p id="orangefil">Comparer</p>
+    <% else %>
+      <% if session[:selection].size < 1 %>
+        <p>Comparer</p>
+      <% else %>
+        <%= link_to 'Comparer', selection_schools_path  %>
+      <% end %>
+
+
     <% end %>
   </div>
 </div>

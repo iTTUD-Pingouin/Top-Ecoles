@@ -18,9 +18,6 @@ function clickToEnSavoirPlus() {
       });
 
   });
-
-
-
 };
 
 export { clickToEnSavoirPlus };

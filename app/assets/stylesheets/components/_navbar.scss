@@ -7,12 +7,18 @@
 .navbar-selection {
   background-color: $blue;
   p {
-    color: white;
+    color: $light-blue;
+  }
+}
+
+.navbar-selection a {
+  p {
+    color: $light-blue !important;
   }
 }
 
 .navbar-selection #orangefil {
-  color: $orange !important;
+  color: white !important;
 }
 
 
@@ -38,7 +44,24 @@
   p {
     margin-right: 10px;
   }
+  a {
+    color: #757575;
+  }
+  transition: all ease .2s;
+}
 
+.filarianne a:hover {
+  margin-top: -1px;
+  font-size: 19px;
+  transition: all ease .1s;
+  text-decoration: none;
+}
+
+#orangefil:hover {
+   margin-top: -1px;
+  font-size: 19px;
+  transition: all ease .2s;
+  text-decoration: none;
 }
 
 .display_none {
