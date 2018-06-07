@@ -17,7 +17,7 @@ puts "Parsing sampleschools csv file ..."
 CSV.foreach(filepath, csv_options) do |row|
   schoolname = row["nom"].gsub(/(Collège |Lycée |privé )/, "")
   school = School.new(name: schoolname, commune: row["commune"], statut: row["statut"])
-  school.remote_photo_url = url(row["photo-batiment"])
+  school.remote_photo_url = row["photo-batiment"]
   school.save!
 
   if row["type d'établissement"] == "Collège"
@@ -66,7 +66,10 @@ puts "Filières added!"
 
 puts "Creating 3 others Collèges"
 
-School.create!(name: 'Sacré Coeur', commune: 'Aix-en-Provence', statut: 'Privé sous contrat')
+school = School.create!(name: 'Sacré Coeur', commune: 'Aix-en-Provence', statut: 'Privé sous contrat')
+url = "https://www.immojeunepro.com/bundles/boresidence/uploads/documents/570x366/9c0ec579adbcbc91e698c7308e06c9e19d2a7a00-570x366.jpeg"
+school.remote_photo_url = url
+school.save!
 College.create!(address: '33 cours Mirabeau', school_id: 24, statut: 'Privé sous contrat', commune: 'Aix-en-Provence', sections: ["ESPAGNOLE", "BRITANNIQUE"], activities: ["Arts plastiques", "Musique", "Football", "Tennis"])
 
 School.create!(name: 'Sainte-Marie', commune: 'Aix-en-Provence', statut: 'Privé sous contrat')
