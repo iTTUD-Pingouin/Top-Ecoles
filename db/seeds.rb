@@ -57,7 +57,7 @@ puts "Creating some filieres"
     success_rate: Faker::Number.between(80, 89).to_f + Faker::Number.decimal(1, 2).to_f,
     mention_rate: Faker::Number.between(70, 79).to_f  + Faker::Number.decimal(1, 2).to_f ,
     tb_mention_rate: Faker::Number.between(0, 60).to_f  + Faker::Number.decimal(1, 2).to_f ,
-    lycee_id: rand(1..13),
+    lycee_id: Lycee.all.sample.id,
   )
   filiere.save!
 end
