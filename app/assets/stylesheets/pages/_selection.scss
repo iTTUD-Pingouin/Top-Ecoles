@@ -108,7 +108,7 @@
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   padding-bottom: 15px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   margin-right:15px;
   margin-left:15px;
   margin-top: 30px;
@@ -118,6 +118,9 @@
   background-color: white;
 }
 
+.card-school-main:hover {
+  cursor: grab;
+}
 
 .title-etablissement {
   margin-left: -20px;
