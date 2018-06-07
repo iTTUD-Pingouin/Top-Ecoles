@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_06_07_190030) do
     t.text "activities", default: [], array: true
     t.string "statut"
     t.boolean "pensionnat"
+    t.integer "rating"
     t.index ["school_id"], name: "index_colleges_on_school_id"
   end
 
@@ -81,7 +82,6 @@ ActiveRecord::Schema.define(version: 2018_06_07_190030) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
-    t.integer "rating"
   end
 
   create_table "users", force: :cascade do |t|

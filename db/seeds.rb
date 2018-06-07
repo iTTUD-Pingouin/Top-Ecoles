@@ -57,7 +57,7 @@ CSV.foreach(filepath, csv_options) do |row|
   schoolname = row["nom"].gsub(/(Collège |Lycée |privé )/, "")
   school = School.new(name: schoolname, commune: row["commune"], statut: row["statut"])
   school.remote_photo_url = row["photo-batiment"]
-  school.rating = (1..5).to_a.sample
+
   school.save!
 
   if row["type d'établissement"] == "Collège"
@@ -79,6 +79,8 @@ CSV.foreach(filepath, csv_options) do |row|
     college.save!
   elsif row["type d'établissement"] == "Lycée"
     lycee = Lycee.create!(address: row["adresse"], school_id: school.id, statut: school.statut, uai: row['code UAI'], commune: row['commune'])
+    lycee.rating = (1..5).to_a.sample
+
     lycee.save!
   end
 end

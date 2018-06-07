@@ -1,7 +1,19 @@
 <div class="container banner">
   <div class="col-xs-12 col-sm-8">
-    <div class="school-name"><h1><%= @school.name %></h1>
-      <% 5.times do |star| %>
+    <div class="school-name">
+
+      <% if @school.lycee %>
+        <h1>Lycée <%= @school.name %></h1>
+      <% else %>
+        <h1>Collège <%= @school.name %></h1>
+      <% end %>
+
+      <% if @school.lycee %>
+        <% number = @school.lycee.rating %>
+      <% else %>
+        <% number = @school.college.rating %>
+      <% end %>
+      <% number.times do |star| %>
       <%= image_tag "Icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
       <% end %>
     </div>
@@ -36,11 +48,20 @@
       <div class="paragraph">
         <div class="mozaik-1">
           <h4 id="list-item-1">Adresse</h4>
-          <p>Amiens 80400<br>144, boulevard de Saint-Quentin</p>
+
+          <p>
+            <%= @school.commune %> 75010<br>
+            <% if @school.lycee %>
+              <%= @school.lycee.address %>
+            <% else %>
+              <%= @school.college.address %>
+            <% end %>
+          </p>
+
         </div>
         <div class="mozaik-2">
           <h4 id="list-item-1">Distance</h4>
-          <p id="Distance-Alfa-Slab">15 km</p>
+          <p id="Distance-Alfa-Slab"> <%= (1..15).to_a.sample %> km</p>
         </div>
         <div class="mozaik-2">
           <h4 id="list-item-1">Etablissement</h4>

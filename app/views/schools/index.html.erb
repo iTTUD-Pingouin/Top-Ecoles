@@ -58,7 +58,7 @@
                   </div>
                   <div class="card-rating">
 
-                      <% randNumber = (1..5).to_a.sample %>
+                      <% randNumber = school.college.rating %>
                       <% randNumber.times do |star| %>
                         <%= image_tag "Icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
                       <% end %>
@@ -215,7 +215,7 @@
 
                   <div class="card-rating">
 
-                      <% randNumber = (1..5).to_a.sample %>
+                      <% randNumber = school.lycee.rating %>
                       <% randNumber.times do |star| %>
                         <%= image_tag "Icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
                       <% end %>
