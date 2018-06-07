@@ -57,6 +57,24 @@
           </div>
       <% end %>
 
+      <% if @filters.key?("college.pensionnat") %>
+          <div class="tag">
+
+            <% if @filters["college.pensionnat"] == "true" %>
+              <p>Pensionnat</p>
+            <% else %>
+              <p>Pas de pensionnat</p>
+            <% end %>
+            <% if @filters.key?("college.pensionnat") %>
+              <div class="link-sup-tag">
+                <%= link_to schools_path(@filters.merge("college.pensionnat" => nil)) do %>
+                  <i class="fas fa-times"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+
       <% if @filters.key?("lycee_filieres.name") %>
           <div class="tag">
             <p> Filière <%= @filters["lycee_filieres.name"] %></p>

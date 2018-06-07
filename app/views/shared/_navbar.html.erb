@@ -22,7 +22,9 @@
         <p>Filtrer</p>
       <% end %>
     <% else %>
-      <p id="orangefil">Filtrer</p>
+      <%= link_to :back do %>
+        <p id="orangefil">Filtrer</p>
+      <% end %>
     <% end %>
     <p>></p>
     <% if current_page?(selection_schools_path) %>

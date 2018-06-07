@@ -37,6 +37,13 @@ title="
           </div>
         <% end %>
 
+        <% verif = @schools.select { |school| school.college } %>
+        <% if verif.size > 0 %>
+          <div class="btn-filter-selection pensionnat">
+            <p>Pensionnat</p>
+          </div>
+        <% end %>
+
 
         <div class="btn-filter-selection sections-int">
           <p>Sections internationales</p>
@@ -97,19 +104,52 @@ title="
         <!-- sections int -->
         <div class="card-school-category target-sections-int hide-filter">
           <p>Sections internationales</p>
-          <h2>Anglais, Espagnol</h2>
+
+            <% if school.college %>
+
+                <% if !school.college.sections.empty? %>
+                  <% school.college.sections.each do |section| %>
+                    <h2><%=section.capitalize%></h2>
+                  <% end %>
+                <% else %>
+                  <h2> Pas de sections internationales </h2>
+                <% end %>
+
+
+            <% elsif school.lycee %>
+
+               <% if !school.lycee.sections.empty? %>
+                  <% school.lycee.sections.each do |section| %>
+                    <h2><%=section.capitalize%></h2>
+                  <% end %>
+                <% else %>
+                  <h2> Pas de sections internationales </h2>
+                <% end %>
+
+            <% else %>
+              Non
+            <% end %>
+
         </div>
 
+        <!-- Pensionnat -->
+        <div class="card-school-category target-pensionnat hide-filter">
+          <p>Pensionnat</p>
+          <% if school.college %>
+            <h2>
+              <% if school.college.pensionnat %>
+                Oui
+              <% else %>
+                Non
+              <% end %>
+            </h2>
+          <% end %>
+        </div>
 
 
 
         <!------------ A INCLURE ---------------->
 
-        <!-- Pensionnat -->
-        <div class="card-school-category hide-filter">
-          <h2>Pensionnat</h2>
-          <p>Oui</p>
-        </div>
         <!-- Cantine -->
         <div class="card-school-category hide-filter">
           <h2>Cantine</h2>

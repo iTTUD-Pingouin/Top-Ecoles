@@ -66,7 +66,8 @@ class School < ApplicationRecord
         commune: college.commune,
         uai: college.uai,
         statut: college.statut,
-        activities: college.activities
+        activities: college.activities,
+        pensionnat: college.pensionnat
         # ...
       }
     end

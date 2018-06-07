@@ -38,6 +38,11 @@ function selectFilter() {
         })
       }
 
+      if (event.currentTarget.classList.contains("pensionnat")) {
+        document.querySelectorAll(".target-pensionnat").forEach((div) => {
+          div.classList.toggle("hide-filter")
+        })
+      }
 
 
 

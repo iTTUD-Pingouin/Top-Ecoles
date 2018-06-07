@@ -180,7 +180,41 @@
         </div>
       <% end %>
 
+      <!------------------------------ COLLEGE PENSIONNAT  ----------------------------------->
+      <% if @search.aggregations.key?("college.pensionnat") %>
+        <div class="filter-title" id="filter1" type="button" data-toggle="collapse" data-target="#demo11">
+          <div class="filter-and-pastille">
+            <h2>Pensionnat</h2>
+            <% if params["college.pensionnat"] %>
+              <div class="pastille"></div>
+            <% end %>
+          </div>
 
+          <div class="chevron">
+            <%= image_tag "chevronbas1754127.svg"%>
+          </div>
+        </div>
+        <div id="demo11" class="collapse">
+
+          <ul class="list-unstyled filter-space-list">
+            <% (@search.aggregations["college.pensionnat"]["buckets"] || @search.aggregations["college.pensionnat"]["college.pensionnat"]["buckets"]).each do |filter| %>
+              <li>
+                <%= link_to schools_path(@filters.merge("college.pensionnat" => (filter["key"] == 0))), class:  @filters["college.pensionnat"] == (filter["key"] == 0).to_s ? "filter-active" : "" do %>
+                  <% if filter["key"] == 0 %>
+                    Pensionnat (<%= filter["doc_count"] %>)
+                  <% else %>
+                    Pas de pensionnat (<%= filter["doc_count"] %>)
+                  <% end %>
+
+                  <%= link_to schools_path(@filters.merge("college.pensionnat" => nil)), class:  @filters["college.pensionnat"] == (filter["key"] == 0).to_s ? "" : "hidesuplink" do %>
+                    <i class="fas fa-times"></i>
+                  <% end %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
 
 
