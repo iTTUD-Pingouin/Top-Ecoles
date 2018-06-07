@@ -54,11 +54,12 @@
                     </ul>
                   </div>
                   <div class="card-rating">
-                    <%= link_to schools_path do %>
-                      <% 5.times do |star| %>
+
+                      <% randNumber = (1..5).to_a.sample %>
+                      <% randNumber.times do |star| %>
                         <%= image_tag "Icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
                       <% end %>
-                    <% end %>
+
                   </div>
 
 
@@ -206,11 +207,12 @@
                   </div>
 
                   <div class="card-rating">
-                    <%= link_to schools_path do %>
-                      <% 5.times do |star| %>
-                      <%= image_tag "Icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
+
+                      <% randNumber = (1..5).to_a.sample %>
+                      <% randNumber.times do |star| %>
+                        <%= image_tag "Icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
                       <% end %>
-                    <% end %>
+
                   </div>
 
                   <div class="links-bottom-card">
