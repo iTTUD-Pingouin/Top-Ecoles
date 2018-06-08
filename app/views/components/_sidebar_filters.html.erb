@@ -83,7 +83,7 @@
       <% if @search.aggregations.key?("college.sections") %>
         <div class="filter-title" id="filter1" type="button" data-toggle="collapse" data-target="#demo1">
           <div class="filter-and-pastille">
-            <h2>Sections</h2>
+            <h2>Sections internationales</h2>
             <% if params["college.sections"] %>
               <div class="pastille"></div>
             <% end %>
@@ -220,6 +220,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
       <!--------------- LYCEE FILTERS ---------------------->
 
 
@@ -304,7 +314,7 @@
       <% if @search.aggregations.key?("lycee.sections") %>
         <div class="filter-title" id="filter5" type="button" data-toggle="collapse" data-target="#demo5">
           <div class="filter-and-pastille">
-            <h2>Sections</h2>
+            <h2>Sections internationales</h2>
             <% if params["lycee.sections"]  %>
               <div class="pastille"></div>
             <% end %>
@@ -320,7 +330,7 @@
             <% (@search.aggregations["lycee.sections"]["buckets"] || @search.aggregations["lycee.sections"]["lycee.sections"]["buckets"]).each do |filter| %>
               <li>
                 <%= link_to schools_path(@filters.merge("lycee.sections" => filter["key"])), class:  @filters["lycee.sections"] == filter["key"] ? "filter-active" : "" do %>
-                  <%= filter["key"] %> (<%= filter["doc_count"] %>)
+                  <%= filter["key"].capitalize %> (<%= filter["doc_count"] %>)
                   <%= link_to schools_path(@filters.merge("lycee.sections" => nil)), class:  @filters["lycee.sections"] == filter["key"] ? "" : "hidesuplink" do %>
                     <i class="fas fa-times"></i>
                   <% end %>

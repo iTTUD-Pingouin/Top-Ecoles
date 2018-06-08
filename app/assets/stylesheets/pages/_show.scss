@@ -345,3 +345,35 @@ height: 300px;
     color: white;
   }
 }
+
+
+
+
+
+
+
+
+
+.backlink-show {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  background-color: white;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+  padding: 10px;
+  a {
+    color: #404040;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.backlink-show:hover {
+  background-color: #404040;
+  color: $light-gray;
+}
+
+
+
+

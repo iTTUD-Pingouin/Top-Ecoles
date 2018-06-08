@@ -1,3 +1,6 @@
+<%= render 'shared/navbar' %>
+
+
 
 <div class="hat-notifs2" data-toggle="tooltip" data-placement="left" data-html="true"
 title="
@@ -19,15 +22,19 @@ title="
   <div class="sticky">
     <div class="container">
       <div class="filters-container">
-        <div class="btn-filter-selection address active-filter-selection">
-          <p>Adresse</p>
-        </div>
-        <div class="btn-filter-selection commune active-filter-selection">
-          <p>Commune</p>
+
+
+        <div class="btn-filter-selection SR">
+          <p>Taux de réussite au bac</p>
         </div>
 
-        <div class="btn-filter-selection statut active-filter-selection">
-          <p>Statut</p>
+        <div class="btn-filter-selection MR">
+          <p>Taux de mentions</p>
+        </div>
+
+
+        <div class="btn-filter-selection rating active-filter-selection">
+          <p>Note globale TopEcoles </p>
         </div>
 
         <% verif = @schools.select { |school| school.lycee } %>
@@ -44,9 +51,25 @@ title="
           </div>
         <% end %>
 
+        <div class="btn-filter-selection price">
+          <p>Prix</p>
+        </div>
+
+        <div class="btn-filter-selection classementnat">
+          <p>Classement national</p>
+        </div>
+
 
         <div class="btn-filter-selection sections-int">
           <p>Sections internationales</p>
+        </div>
+
+        <div class="btn-filter-selection matieres-optionnelles">
+          <p>Matières optionnelles</p>
+        </div>
+
+        <div class="btn-filter-selection multiple-redoublement">
+          <p>Redoublement multiple</p>
         </div>
 
       </div>
@@ -69,25 +92,40 @@ title="
         </div>
 
 
-        <!------------ address ----------------->
-        <div class="card-school-category target-address ">
-          <p>Adresse</p>
-          <% if school.college  %>
-            <h2><%= school.college.address %></h2>
-          <% elsif school.lycee %>
-            <h2><%= school.lycee.address %></h2>
+
+
+         <!-- résultat bac -->
+        <div class="card-school-category target-SR hide-filter">
+          <p>Taux de réussite au bac</p>
+          <% if school.lycee %>
+            <h2><%= school.lycee.filieres.first.success_rate %> % </h2>
           <% end %>
         </div>
-        <!-- commune -->
-        <div class="card-school-category target-commune ">
-          <p>Commune</p>
-          <h2><%= school.commune %></h2>
+
+        <div class="card-school-category target-MR hide-filter">
+          <p>Taux de mentions</p>
+          <% if school.lycee %>
+            <h2><%= school.lycee.filieres.first.mention_rate %> % </h2>
+          <% end %>
         </div>
-        <!------------ status ------------------>
-        <div class="card-school-category target-statut ">
-          <p>Statut</p>
-          <h2><%= school.statut %></h2>
+
+         <!------------ rating ------------------>
+        <div class="card-school-category target-rating ">
+          <p>Note globale TopEcoles</p>
+
+          <% if school.lycee %>
+            <% number = school.lycee.rating %>
+          <% else %>
+            <% number = school.college.rating %>
+          <% end %>
+          <% number.times do |star| %>
+            <%= image_tag "Icons/star_Magicon_full_yellow_160801_F5D327.svg", class: "star-full-show" %>
+          <% end %>
         </div>
+
+
+
+
         <!------------ filières ----------------->
         <div class="card-school-category target-filieres hide-filter">
           <p>Filières</p>
@@ -147,6 +185,26 @@ title="
         </div>
 
 
+        <div class="card-school-category target-price hide-filter">
+          <p>Prix de la scolarité</p>
+          <h2><%= ["2000", "2500", "4700", "5000", "7000", "14 000"].sample %>€</h2>
+        </div>
+
+
+
+        <div class="card-school-category target-classementnat hide-filter">
+          <p>Classement national</p>
+          <h2><%= (1..900).to_a.sample %> / 3000 </h2>
+        </div>
+
+
+        <div class="card-school-category target-multiple-redoublement hide-filter">
+          <p>Multiple redoublement possible</p>
+          <h2><%= ["Oui", "Oui", "Non"].sample %></h2>
+        </div>
+
+
+
 
         <!------------ A INCLURE ---------------->
 
@@ -161,11 +219,7 @@ title="
           <h2>Options</h2>
           <p>Différentielle et fun</p>
         </div>
-        <!-- résultat bac -->
-        <div class="card-school-category hide-filter">
-          <h2>Taux de réussite au bac</h2>
-          <p>91%</p>
-        </div>
+
 
         <!-- classement -->
         <div class="card-school-category hide-filter">
@@ -173,15 +227,18 @@ title="
           <p>1ere école sur 3000</p>
         </div>
         <!-- rapport qualité prix -->
-        <div class="card-school-category hide-filter">
-          <h2>Classement qualité/prix</h2>
-          <p>139e école sur 3000</p>
-        </div>
 
+<div class="go-to-website-1 link-selection ">
+ <a href="http://www.google.com" target="_blank" >Aller sur le site de l'école</a>
+</div>
       </div>
     <% end %>
   </div>
 
 
 </div>
+
+
+
+
 

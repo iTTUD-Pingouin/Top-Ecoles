@@ -12,6 +12,8 @@ class SchoolsController < ApplicationController
       "college.activities",
       "college.pensionnat",
 
+
+
       # aggregats lycee
       "lycee_filieres.name",
       "lycee.sections",
@@ -71,6 +73,7 @@ class SchoolsController < ApplicationController
     if params["college.pensionnat"].present?
       conditions["college.pensionnat"] = params["college.pensionnat"]
     end
+
 
 
 

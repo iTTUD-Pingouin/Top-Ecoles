@@ -44,9 +44,44 @@ function selectFilter() {
         })
       }
 
+      if (event.currentTarget.classList.contains("rating")) {
+        document.querySelectorAll(".target-rating").forEach((div) => {
+          div.classList.toggle("hide-filter")
+        })
+      }
+
+      if (event.currentTarget.classList.contains("price")) {
+        document.querySelectorAll(".target-price").forEach((div) => {
+          div.classList.toggle("hide-filter")
+        })
+      }
 
 
+      if (event.currentTarget.classList.contains("classementnat")) {
+        document.querySelectorAll(".target-classementnat").forEach((div) => {
+          div.classList.toggle("hide-filter")
+        })
+      }
 
+
+      if (event.currentTarget.classList.contains("multiple-redoublement")) {
+        document.querySelectorAll(".target-multiple-redoublement").forEach((div) => {
+          div.classList.toggle("hide-filter")
+        })
+      }
+
+       if (event.currentTarget.classList.contains("SR")) {
+        document.querySelectorAll(".target-SR").forEach((div) => {
+          div.classList.toggle("hide-filter")
+        })
+      }
+
+
+if (event.currentTarget.classList.contains("MR")) {
+        document.querySelectorAll(".target-MR").forEach((div) => {
+          div.classList.toggle("hide-filter")
+        })
+      }
 
 
 
