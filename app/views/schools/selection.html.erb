@@ -98,7 +98,7 @@ title="
         <div class="card-school-category target-SR ">
           <p>Taux de réussite au bac</p>
           <% if school.lycee %>
-            <% if !school.lycee.filieres.first.success_rate.nil? %>
+            <% if school.lycee.filieres.first.success_rate != nil %>
               <h2><%= school.lycee.filieres.first.success_rate %> % </h2>
             <% end %>
           <% end %>
@@ -107,7 +107,7 @@ title="
         <div class="card-school-category target-MR ">
           <p>Taux de mentions</p>
           <% if school.lycee %>
-            <% if !school.lycee.filieres.first.mention_rate.nil? %>
+            <% if school.lycee.filieres.first.mention_rate != nil %>
               <h2><%= school.lycee.filieres.first.mention_rate %> % </h2>
             <% end %>
           <% end %>
