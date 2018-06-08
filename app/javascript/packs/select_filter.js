@@ -82,6 +82,11 @@ if (event.currentTarget.classList.contains("MR")) {
           div.classList.toggle("hide-filter")
         })
       }
+if (event.currentTarget.classList.contains("matieres-optionnelles")) {
+        document.querySelectorAll(".target-matieres-optionnelles").forEach((div) => {
+          div.classList.toggle("hide-filter")
+        })
+      }
 
 
 
