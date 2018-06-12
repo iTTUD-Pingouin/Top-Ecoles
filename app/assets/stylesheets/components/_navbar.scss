@@ -69,12 +69,9 @@
 }
 
 
-.orange-counter {
-  color: $orange;
-}
 
 
-// PASTILLE QUI DEFILE -------------------
+// PASTILLE QUI CONTIENT LE COMPTEUR D'ECOLES SELECTIONNEES -------------------
 .hat-notifs {
   margin-top: 5px;
   width: 110px;
@@ -87,14 +84,6 @@
   z-index: 12;
   background: rgba(244,244,244,.95);
   box-shadow: 1px 1px 1px rgba(0,0,0,.1);
-  h1 {
-    position: absolute;
-    margin: 0;
-    top: 13px;
-    left: 39px;
-    font-size: 50px;
-    font-family: "Alfa Slab One", cursive;
-  }
   p {
     position: absolute;
     bottom: 9px;
@@ -103,6 +92,33 @@
   }
 }
 
+// Chiffre représentant le nombre d'écoles sélectionnées dans la pastille de compteur
+.orange-counter {
+  color: $orange;
+  font-family: $counters;
+  font-size: 56px;
+  position: absolute;
+  margin: 0;
+  top: 6px;
+  left: 39px;
+  font-size: 50px;
+}
+
+
+.hat-notifs:hover {
+  background: $orange;
+  color: white;
+  cursor: pointer;
+  .orange-counter {
+    color: white;
+  }
+  p {
+    color: white;
+  }
+}
+
+
+
 .clean-link {
   left: 10px;
   bottom: 0;
@@ -110,18 +126,6 @@
     font-size: 40px;
   }
   position: absolute;
-}
-
-.hat-notifs:hover {
-  background: $orange;
-  color: white;
-  cursor: pointer;
-  h1 {
-    color: white;
-  }
-  p {
-    color: white;
-  }
 }
 
 .selection-link {

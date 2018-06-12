@@ -1,14 +1,16 @@
 <%= render 'shared/navbar' %>
 
 
-
+<!-- Compteur d'écoles sélectionnées encapsulé dans un lien menant à la page de comparaison ------->
     <%= link_to  selection_schools_path, class: "selection-link" do %>
       <div id="displaynonebutton">
-            <% if session[:selection] && session[:selection].size > 0 %>
-              <%= render "counter" %>
-            <% end %>
+        <% if session[:selection] && session[:selection].size > 0 %>
+          <%= render "counter" %>
+        <% end %>
       </div>
     <% end %>
+
+
 
 
 <div class="main-container">
