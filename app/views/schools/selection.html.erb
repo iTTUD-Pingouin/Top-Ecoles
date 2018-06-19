@@ -80,39 +80,16 @@ title="
 <!-------------- Cartes de comparaison des différentes écoles  -------------->
 
 
-
-
   <div class="compare-container list-group" id="simpleList">
     <% @schools.each do |school| %>
       <div class="card-school-main text-center list-group-item">
 
-
-
-
         <!-- image -->
-
         <% if school.photo.url != nil %>
           <div class="compare-card-image" style="background-image: url('<%= cl_image_path school.photo%>') !important"></div>
         <% else %>
           <div class="card-image2"></div>
         <% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       <!--- TITRE DE L'ETABLISSEMENT -->
@@ -125,11 +102,9 @@ title="
         </div>
 
 
-
-
          <!-- résultat bac : Success rate, taux de réussite -->
         <div class="card-school-category target-SR ">
-          <p>Taux de réussite au bac</p>
+          <p class="filters-titles-in-compare-page">Taux de réussite au bac</p>
           <% if school.lycee %>
             <% if school.lycee.filieres.first != nil && !school.lycee.filieres.first.success_rate.nil? %>
               <p><%= school.lycee.filieres.first.success_rate %> % </p>
@@ -140,7 +115,7 @@ title="
 
         <!-- résultat bac : mention rate, taux de mention -->
         <div class="card-school-category target-MR ">
-          <p>Taux de mentions</p>
+          <p class="filters-titles-in-compare-page">Taux de mentions</p>
           <% if school.lycee %>
             <% if school.lycee.filieres.first != nil && !school.lycee.filieres.first.mention_rate.nil?  %>
               <p><%= school.lycee.filieres.first.mention_rate %> % </p>
@@ -150,7 +125,7 @@ title="
 
          <!------------ rating ------------------>
         <div class="card-school-category target-rating ">
-          <p>Note globale TopEcoles</p>
+          <p class="filters-titles-in-compare-page">Note globale TopEcoles</p>
 
           <% if school.lycee %>
             <% number = school.lycee.rating %>
@@ -167,7 +142,7 @@ title="
 
         <!------------ filières ----------------->
         <div class="card-school-category target-filieres hide-filter">
-          <p>Filières</p>
+          <p class="filters-titles-in-compare-page">Filières</p>
           <% if school.lycee %>
             <p>
               <ul class="list-inline">
@@ -180,7 +155,7 @@ title="
         </div>
         <!-- sections int -->
         <div class="card-school-category target-sections-int hide-filter">
-          <p>Sections internationales</p>
+          <p class="filters-titles-in-compare-page">Sections internationales</p>
 
             <% if school.college %>
 
@@ -211,7 +186,7 @@ title="
 
         <!-- Pensionnat -->
         <div class="card-school-category target-pensionnat hide-filter">
-          <p>Pensionnat</p>
+          <p class="filters-titles-in-compare-page">Pensionnat</p>
           <% if school.college %>
             <p>
               <% if school.college.pensionnat %>
@@ -225,20 +200,20 @@ title="
 
 
         <div class="card-school-category target-price">
-          <p>Prix de la scolarité</p>
+          <p class="filters-titles-in-compare-page">Prix de la scolarité</p>
           <p><%= ["2000", "2500", "4700", "5000", "7000", "14 000"].sample %>€</p>
         </div>
 
 
 
         <div class="card-school-category target-classementnat">
-          <p>Classement national</p>
+          <p class="filters-titles-in-compare-page">Classement national</p>
           <p><%= (1..900).to_a.sample %> / 3000 </p>
         </div>
 
 
         <div class="card-school-category target-multiple-redoublement">
-          <p>Multiple redoublement possible</p>
+          <p class="filters-titles-in-compare-page">Multiple redoublement possible</p>
           <p><%= ["Oui", "Oui", "Non"].sample %></p>
         </div>
 
@@ -247,9 +222,9 @@ title="
 
         <!------------ A INCLURE ---------------->
 
-        <!-- Cantine -->
+        <!-- Matières optionnelles -->
         <div class="card-school-category target-matieres-optionnelles">
-          <p>Matières optionnelles</p>
+          <p class="filters-titles-in-compare-page">Matières optionnelles</p>
           <p>
             <%= ["Surf", "Danse", "Littéraure", "Chant", "Latin", "Informatique"].sample %>
           </p>
@@ -257,14 +232,14 @@ title="
 
         <!-- Options -->
         <div class="card-school-category hide-filter">
-          <p>Options</p>
+          <p class="filters-titles-in-compare-page">Options</p>
           <p>Différentielle et fun</p>
         </div>
 
 
         <!-- classement -->
         <div class="card-school-category hide-filter">
-          <p>Classement excellence</p>
+          <p class="filters-titles-in-compare-page">Classement excellence</p>
           <p>1ere école sur 3000</p>
         </div>
         <!-- rapport qualité prix -->

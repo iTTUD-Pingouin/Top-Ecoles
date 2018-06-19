@@ -26,9 +26,10 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  p {
-    opacity: 0.4;
-  }
+}
+
+.filters-titles-in-compare-page {
+  opacity: .4;
 }
 
 
@@ -137,10 +138,11 @@
   justify-content: center;
   height: 80px;
   z-index: 40;
-  h2 {
+  p {
     font-size: 28px;
     margin: 0;
-    color: #404040;
+    color: #404040 !important;
+    opacity: 1;
   }
 }
 
@@ -253,8 +255,6 @@
 
   opacity: 1;
 }
-
-
 
 
 
