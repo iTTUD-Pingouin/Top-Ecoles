@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 
 
-
+<!--------- Bouton qui au hover donne une aide sur l'utilisation de la page  ------------->
 <div class="hat-notifs2" data-toggle="tooltip" data-placement="left" data-html="true"
 title="
          <strong>Vous êtes perdu ?</strong>
@@ -10,19 +10,18 @@ title="
 
          <p>Maintenez le clic enfoncé sur une école pour la positionner où vous le souhaitez !</p>
        ">
-  <h1 class="orange-counter2">
+  <p class="orange-counter2">
     ?
-  </h1>
+  </p>
   <p>Besoin d'aide</p>
 </div>
 
 
-
+<!-- Barre de sélection ou déselection des filtres à activer pour les faire apparaitre sur les cartes de comparaison -->
 <div class="body-selection">
   <div class="sticky">
     <div class="container">
       <div class="filters-container">
-
 
         <div class="btn-filter-selection SR active-filter-selection">
           <p>Taux de réussite au bac</p>
@@ -94,7 +93,7 @@ title="
 
 
 
-         <!-- résultat bac -->
+         <!-- résultat bac : Success rate, taux de réussite -->
         <div class="card-school-category target-SR ">
           <p>Taux de réussite au bac</p>
           <% if school.lycee %>
@@ -104,6 +103,8 @@ title="
           <% end %>
         </div>
 
+
+        <!-- résultat bac : mention rate, taux de mention -->
         <div class="card-school-category target-MR ">
           <p>Taux de mentions</p>
           <% if school.lycee %>

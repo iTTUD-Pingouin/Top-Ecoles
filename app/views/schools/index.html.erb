@@ -20,10 +20,18 @@
     <!-- Div située au dessus des résultats de recherche qui contient tous les tags des filtres activés et le nombre d'écoles toujours affichées -->
     <%= render 'components/count_and_tags' %>
 
+    <!-- Phrase d'aide pour l'onboarding: on indique à l'utilisateur la suite des opérations pour sa visite -->
     <p style="font-size: 24px;">Sélectionnez les écoles que vous souhaitez comparer</p>
+
+
+    <!-- Lien pour supprimer les écoles enregistrées dans la session  -->
     <%= link_to clean_path, remote: true do %>
       <p>Effacer la sélection</p>
     <% end %>
+
+
+
+    <!-- Résultats de la recherche sous forme de cartes  -->
     <div class="results-container">
       <div class="row">
         <% @schools.each do |school| %>

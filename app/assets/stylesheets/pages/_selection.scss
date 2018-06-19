@@ -176,14 +176,7 @@
   z-index: 20;
   background: rgba(244,244,244,1);
   box-shadow: 1px 1px 1px rgba(0,0,0,.1);
-  h1 {
-    position: absolute;
-    margin: 0;
-    top: 13px;
-    left: 39px;
-    font-size: 50px;
-    font-family: "Alfa Slab One", cursive;
-  }
+
   p {
     position: absolute;
     bottom: 9px;
@@ -214,7 +207,13 @@
 }
 
 .orange-counter2 {
-  color: $orange;
+  position: absolute !important;
+  margin: 0 !important;
+  top: 13px !important;
+  left: 39px !important;
+  font-family: "Alfa Slab One", cursive !important;
+  color: $orange !important;
+  font-size: 48px !important;
 }
 
 
