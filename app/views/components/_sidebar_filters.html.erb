@@ -1,6 +1,9 @@
+
+
+<!-- Dans cette sidebar, chaque classe avec le data target demo#chiffre est relié à une div avec un id #chiffre pour activer
+le comportement de collapse programmé par bootstrap -->
+
 <div id="sidebar-filters">
-
-
     <div class="filters">
         <!------------------------------ LIEU  ----------------------------------->
 
@@ -10,6 +13,8 @@
             <% if params[:city] == "" %>
               <div></div>
             <% else %>
+              <!-- petite div ronde, pastille orange, juste graphique pour indiquer que le filtre est activé, à chaque fois qu'un filtre
+              est activité dans la sidebar -->
               <div class="pastille"></div>
             <% end %>
 
