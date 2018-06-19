@@ -189,9 +189,6 @@
   background: $orange;
   color: white;
   cursor: pointer;
-  h1 {
-    color: white;
-  }
   p {
     color: white;
   }
@@ -261,6 +258,11 @@
 
 
 
+.compare-card-image {
+  height: 200px;
+  background-size: cover;
+  margin-top: 10px;
+}
 
 
 
