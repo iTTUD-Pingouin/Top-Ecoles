@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 
 
-
+<!--------- Bouton qui au hover donne une aide sur l'utilisation de la page  ------------->
 <div class="hat-notifs2" data-toggle="tooltip" data-placement="left" data-html="true"
 title="
          <strong>Vous êtes perdu ?</strong>
@@ -10,19 +10,18 @@ title="
 
          <p>Maintenez le clic enfoncé sur une école pour la positionner où vous le souhaitez !</p>
        ">
-  <h1 class="orange-counter2">
+  <p class="orange-counter2">
     ?
-  </h1>
+  </p>
   <p>Besoin d'aide</p>
 </div>
 
 
-
+<!-- Barre de sélection ou déselection des filtres à activer pour les faire apparaitre sur les cartes de comparaison -->
 <div class="body-selection">
   <div class="sticky">
     <div class="container">
       <div class="filters-container">
-
 
         <div class="btn-filter-selection SR active-filter-selection">
           <p>Taux de réussite au bac</p>
@@ -77,45 +76,56 @@ title="
   </div>
 
 
+
+<!-------------- Cartes de comparaison des différentes écoles  -------------->
+
+
   <div class="compare-container list-group" id="simpleList">
     <% @schools.each do |school| %>
       <div class="card-school-main text-center list-group-item">
+
         <!-- image -->
-        <div class="card-image">
-        </div>
+        <% if school.photo.url != nil %>
+          <div class="compare-card-image" style="background-image: url('<%= cl_image_path school.photo%>') !important"></div>
+        <% else %>
+          <div class="card-image2"></div>
+        <% end %>
+
+
+      <!--- TITRE DE L'ETABLISSEMENT -->
         <div class="title-etablissement">
           <% if school.college  %>
-            <h2>Collège <%= school.name %></h2>
+            <p>Collège <%= school.name %></p>
           <% elsif school.lycee %>
-            <h2>Lycée <%= school.name %></h2>
+            <p>Lycée <%= school.name %></p>
           <% end %>
         </div>
 
 
-
-
-         <!-- résultat bac -->
+         <!-- résultat bac : Success rate, taux de réussite -->
         <div class="card-school-category target-SR ">
-          <p>Taux de réussite au bac</p>
+          <p class="filters-titles-in-compare-page">Taux de réussite au bac</p>
           <% if school.lycee %>
             <% if school.lycee.filieres.first != nil && !school.lycee.filieres.first.success_rate.nil? %>
-              <h2><%= school.lycee.filieres.first.success_rate %> % </h2>
+              <p><%= school.lycee.filieres.first.success_rate %> % </p>
             <% end %>
           <% end %>
         </div>
 
+
+        <!-- résultat bac : mention rate, taux de mention -->
         <div class="card-school-category target-MR ">
-          <p>Taux de mentions</p>
+          <p class="filters-titles-in-compare-page">Taux de mentions</p>
           <% if school.lycee %>
             <% if school.lycee.filieres.first != nil && !school.lycee.filieres.first.mention_rate.nil?  %>
-              <h2><%= school.lycee.filieres.first.mention_rate %> % </h2>
+              <p><%= school.lycee.filieres.first.mention_rate %> % </p>
             <% end %>
           <% end %>
         </div>
 
          <!------------ rating ------------------>
         <div class="card-school-category target-rating ">
-          <p>Note globale TopEcoles</p>
+          <p class="filters-titles-in-compare-page">Note globale TopEcoles</p>
 
           <% if school.lycee %>
             <% number = school.lycee.rating %>
@@ -132,29 +142,29 @@ title="
 
         <!------------ filières ----------------->
         <div class="card-school-category target-filieres hide-filter">
-          <p>Filières</p>
+          <p class="filters-titles-in-compare-page">Filières</p>
           <% if school.lycee %>
-            <h2>
+            <p>
               <ul class="list-inline">
               <%school.lycee.filieres.each do |filiere|%>
                 <li><%= filiere.name %></li>
               <% end %>
               </ul>
-            </h2>
+            </p>
           <% end %>
         </div>
         <!-- sections int -->
         <div class="card-school-category target-sections-int hide-filter">
-          <p>Sections internationales</p>
+          <p class="filters-titles-in-compare-page">Sections internationales</p>
 
             <% if school.college %>
 
                 <% if !school.college.sections.empty? %>
                   <% school.college.sections.each do |section| %>
-                    <h2><%=section.capitalize%></h2>
+                    <p><%=section.capitalize%></p>
                   <% end %>
                 <% else %>
-                  <h2> Pas de sections internationales </h2>
+                  <p> Pas de sections internationales </p>
                 <% end %>
 
 
@@ -162,10 +172,10 @@ title="
 
                <% if !school.lycee.sections.empty? %>
                   <% school.lycee.sections.each do |section| %>
-                    <h2><%=section.capitalize%></h2>
+                    <p><%=section.capitalize%></p>
                   <% end %>
                 <% else %>
-                  <h2> Pas de sections internationales </h2>
+                  <p> Pas de sections internationales </p>
                 <% end %>
 
             <% else %>
@@ -176,35 +186,35 @@ title="
 
         <!-- Pensionnat -->
         <div class="card-school-category target-pensionnat hide-filter">
-          <p>Pensionnat</p>
+          <p class="filters-titles-in-compare-page">Pensionnat</p>
           <% if school.college %>
-            <h2>
+            <p>
               <% if school.college.pensionnat %>
                 Oui
               <% else %>
                 Non
               <% end %>
-            </h2>
+            </p>
           <% end %>
         </div>
 
 
         <div class="card-school-category target-price">
-          <p>Prix de la scolarité</p>
-          <h2><%= ["2000", "2500", "4700", "5000", "7000", "14 000"].sample %>€</h2>
+          <p class="filters-titles-in-compare-page">Prix de la scolarité</p>
+          <p><%= ["2000", "2500", "4700", "5000", "7000", "14 000"].sample %>€</p>
         </div>
 
 
 
         <div class="card-school-category target-classementnat">
-          <p>Classement national</p>
-          <h2><%= (1..900).to_a.sample %> / 3000 </h2>
+          <p class="filters-titles-in-compare-page">Classement national</p>
+          <p><%= (1..900).to_a.sample %> / 3000 </p>
         </div>
 
 
         <div class="card-school-category target-multiple-redoublement">
-          <p>Multiple redoublement possible</p>
-          <h2><%= ["Oui", "Oui", "Non"].sample %></h2>
+          <p class="filters-titles-in-compare-page">Multiple redoublement possible</p>
+          <p><%= ["Oui", "Oui", "Non"].sample %></p>
         </div>
 
 
@@ -212,24 +222,24 @@ title="
 
         <!------------ A INCLURE ---------------->
 
-        <!-- Cantine -->
+        <!-- Matières optionnelles -->
         <div class="card-school-category target-matieres-optionnelles">
-          <p>Matières optionnelles</p>
-          <h2>
+          <p class="filters-titles-in-compare-page">Matières optionnelles</p>
+          <p>
             <%= ["Surf", "Danse", "Littéraure", "Chant", "Latin", "Informatique"].sample %>
-          </h2>
+          </p>
         </div>
 
         <!-- Options -->
         <div class="card-school-category hide-filter">
-          <h2>Options</h2>
+          <p class="filters-titles-in-compare-page">Options</p>
           <p>Différentielle et fun</p>
         </div>
 
 
         <!-- classement -->
         <div class="card-school-category hide-filter">
-          <h2>Classement excellence</h2>
+          <p class="filters-titles-in-compare-page">Classement excellence</p>
           <p>1ere école sur 3000</p>
         </div>
         <!-- rapport qualité prix -->

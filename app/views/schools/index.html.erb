@@ -1,25 +1,37 @@
 <%= render 'shared/navbar' %>
 
 
-
+<!-- Compteur d'écoles sélectionnées encapsulé dans un lien menant à la page de comparaison ------->
     <%= link_to  selection_schools_path, class: "selection-link" do %>
       <div id="displaynonebutton">
-            <% if session[:selection] && session[:selection].size > 0 %>
-              <%= render "counter" %>
-            <% end %>
+        <% if session[:selection] && session[:selection].size > 0 %>
+          <%= render "counter" %>
+        <% end %>
       </div>
     <% end %>
 
 
+
+
 <div class="main-container">
+  <!---------- Barre latérale qui contient tous les filtres "facets" ---------->
   <%= render 'components/sidebar_filters' %>
   <div class="container">
+    <!-- Div située au dessus des résultats de recherche qui contient tous les tags des filtres activés et le nombre d'écoles toujours affichées -->
     <%= render 'components/count_and_tags' %>
 
+    <!-- Phrase d'aide pour l'onboarding: on indique à l'utilisateur la suite des opérations pour sa visite -->
     <p style="font-size: 24px;">Sélectionnez les écoles que vous souhaitez comparer</p>
+
+
+    <!-- Lien pour supprimer les écoles enregistrées dans la session  -->
     <%= link_to clean_path, remote: true do %>
       <p>Effacer la sélection</p>
     <% end %>
+
+
+
+    <!-- Résultats de la recherche sous forme de cartes  -->
     <div class="results-container">
       <div class="row">
         <% @schools.each do |school| %>

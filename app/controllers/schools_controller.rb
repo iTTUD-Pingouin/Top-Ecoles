@@ -1,6 +1,5 @@
 class SchoolsController < ApplicationController
   def index
-
     @filters = params.permit(
       # base
       :city, :type,
@@ -12,8 +11,6 @@ class SchoolsController < ApplicationController
       "college.activities",
       "college.pensionnat",
 
-
-
       # aggregats lycee
       "lycee_filieres.name",
       "lycee.sections",
@@ -21,18 +18,17 @@ class SchoolsController < ApplicationController
       "lycee_filieres.mention_rate"
     )
 
-
     conditions = {}
     @aggregations = []
 
-    # Query
+    # Résultats retournés selon si la ville a été précisée ou pas
     if params[:city].present?
       @query = params[:city]
     else
       @query = "*"
     end
 
-    # Type etablissement
+    # Vérification du type etablissement par rapport au premier filtre
     case params[:type]
     when 'primaire'
       conditions[:has_primaire] = true
@@ -76,8 +72,6 @@ class SchoolsController < ApplicationController
 
 
 
-
-
     # Aggregats Lycée
     if params["lycee_filieres.name"].present?
       conditions["lycee_filieres.name"] = params["lycee_filieres.name"]
@@ -100,26 +94,31 @@ class SchoolsController < ApplicationController
     @schools = @search.results
   end
 
+
   def show
     @school = School.find(params[:id])
   end
 
+
+
+# ------------ Selection : renvoit les écoles sélectionnées à la page de comparaison -----------------------------------------------------
   def selection
     @schools = []
     session[:selection].each do |school_id|
       @schools << School.find(school_id)
     end
-    @schools
   end
 
+
+# ---- Add to compare to list : ajoute une école à la sélection (cookies without log in)
+# ---- Amorce le compteur d'écoles sélectionnées AJAX et au rechargement de la page ---
   def add_to_compare_list
     session[:selection] = [] unless session[:selection]
 
     if session[:selection].include?(params[:id].to_s)
       session[:selection] -= ["#{params[:id]}"]
     else
-      school = params[:id]
-      session[:selection] << school
+      session[:selection] << params[:id]
     end
 
     if session[:selection].size > 0
@@ -130,6 +129,8 @@ class SchoolsController < ApplicationController
   end
 
 
+# ---- Supprime toutes les écoles sélectionnées des cookies
+# ---- supprime le compteur en haut à droite et toutes les pastilles oranges.
   def clean_list
     session[:selection] = []
   end
