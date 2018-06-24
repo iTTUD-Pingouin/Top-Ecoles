@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_24_155245) do
+ActiveRecord::Schema.define(version: 2018_06_24_160322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,21 @@ ActiveRecord::Schema.define(version: 2018_06_24_155245) do
     t.string "video1"
     t.string "video2"
     t.string "description_etablissement"
+    t.integer "succes_rate_2015"
+    t.integer "succes_rate_without_mention_2015"
+    t.integer "succes_rate_AB_mention_2015"
+    t.integer "succes_rate_B_mention_2015"
+    t.integer "succes_rate_TB_mention_2015"
+    t.integer "succes_rate_2016"
+    t.integer "succes_rate_without_mention_2016"
+    t.integer "succes_rate_AB_mention_2016"
+    t.integer "succes_rate_B_mention_2016"
+    t.integer "succes_rate_TB_mention_2016"
+    t.integer "succes_rate_2017"
+    t.integer "succes_rate_without_mention_2017"
+    t.integer "succes_rate_AB_mention_2017"
+    t.integer "succes_rate_B_mention_2017"
+    t.integer "succes_rate_TB_mention_2017"
     t.index ["school_id"], name: "index_colleges_on_school_id"
   end
 
