@@ -7,11 +7,6 @@ class AddAllColumnsToColleges < ActiveRecord::Migration[5.2]
     add_column :colleges, :region, :string
     add_column :colleges, :latitude, :integer
     add_column :colleges, :longitude, :integer
-    add_column :colleges, :has_maternelle, :boolean, default: false
-    add_column :colleges, :has_elementaire, :boolean, default: false
-    add_column :colleges, :has_generale_way, :boolean, default: false
-    add_column :colleges, :has_techno_way, :boolean, default: false
-    add_column :colleges, :has_pro_way, :boolean, default: false
     add_column :colleges, :telephone, :integer
     add_column :colleges, :website, :string
     add_column :colleges, :has_restauration, :boolean, default: false
@@ -43,6 +38,5 @@ class AddAllColumnsToColleges < ActiveRecord::Migration[5.2]
     add_column :colleges, :video1, :string
     add_column :colleges, :video2, :string
     add_column :colleges, :description_etablissement, :string
-
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_24_160322) do
+ActiveRecord::Schema.define(version: 2018_06_24_163618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,6 @@ ActiveRecord::Schema.define(version: 2018_06_24_160322) do
     t.string "region"
     t.integer "latitude"
     t.integer "longitude"
-    t.boolean "has_maternelle", default: false
-    t.boolean "has_elementaire", default: false
-    t.boolean "has_generale_way", default: false
-    t.boolean "has_techno_way", default: false
-    t.boolean "has_pro_way", default: false
     t.integer "telephone"
     t.string "website"
     t.boolean "has_restauration", default: false
@@ -119,6 +114,62 @@ ActiveRecord::Schema.define(version: 2018_06_24_160322) do
     t.string "commune"
     t.string "statut"
     t.integer "rating"
+    t.string "name"
+    t.integer "cp"
+    t.integer "code_commune"
+    t.string "departement"
+    t.integer "code_departement"
+    t.string "academie"
+    t.string "region"
+    t.integer "latitude"
+    t.integer "longitude"
+    t.integer "telephone"
+    t.string "website"
+    t.boolean "has_general_way", default: false
+    t.boolean "has_techno_way", default: false
+    t.boolean "has_pro_way", default: false
+    t.boolean "has_ES_serie", default: false
+    t.boolean "has_S_serie", default: false
+    t.boolean "has_L_serie", default: false
+    t.boolean "has_bacpro_production_serie", default: false
+    t.boolean "has_bacpro_service_serie", default: false
+    t.boolean "has_bactechno_TMD_serie", default: false
+    t.boolean "has_bactechno_STHR_serie", default: false
+    t.boolean "has_bactechno_STMG_serie", default: false
+    t.boolean "has_bactechno_STL_serie", default: false
+    t.boolean "has_bactechno_STAV_serie", default: false
+    t.boolean "has_bactechno_ST2S_serie", default: false
+    t.boolean "has_bactechno_STI2D_serie", default: false
+    t.boolean "has_bactechno_STD2A_serie", default: false
+    t.boolean "has_restauration", default: false
+    t.boolean "has_hebergement", default: false
+    t.boolean "has_ulis", default: false
+    t.boolean "has_apprentissage", default: false
+    t.boolean "has_segpa", default: false
+    t.boolean "has_art_section", default: false
+    t.boolean "has_cinema_section", default: false
+    t.boolean "has_theatre_section", default: false
+    t.boolean "has_sport_section", default: false
+    t.boolean "has_international_section", default: false
+    t.boolean "has_european_section", default: false
+    t.boolean "has_agricole_section", default: false
+    t.boolean "has_military_section", default: false
+    t.boolean "has_metiers_section", default: false
+    t.boolean "has_post_bac_sections", default: false
+    t.boolean "is_educ_priority_zone", default: false
+    t.integer "students_number"
+    t.string "onisep_view"
+    t.string "main_photo"
+    t.string "logo"
+    t.string "photo1"
+    t.string "photo2"
+    t.string "photo3"
+    t.string "photo4"
+    t.string "photo5"
+    t.string "photo6"
+    t.string "video1"
+    t.string "video2"
+    t.string "description_etablissement"
     t.index ["school_id"], name: "index_lycees_on_school_id"
   end
 
