@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_07_190030) do
+ActiveRecord::Schema.define(version: 2018_06_24_155245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,51 @@ ActiveRecord::Schema.define(version: 2018_06_07_190030) do
     t.string "statut"
     t.boolean "pensionnat"
     t.integer "rating"
+    t.string "name"
+    t.integer "cp"
+    t.integer "code_commune"
+    t.string "departement"
+    t.integer "code_departement"
+    t.string "academie"
+    t.string "region"
+    t.integer "latitude"
+    t.integer "longitude"
+    t.boolean "has_maternelle", default: false
+    t.boolean "has_elementaire", default: false
+    t.boolean "has_generale_way", default: false
+    t.boolean "has_techno_way", default: false
+    t.boolean "has_pro_way", default: false
+    t.integer "telephone"
+    t.string "website"
+    t.boolean "has_restauration", default: false
+    t.boolean "has_hebergement", default: false
+    t.boolean "has_ulis", default: false
+    t.boolean "has_apprentissage", default: false
+    t.boolean "has_segpa", default: false
+    t.boolean "has_art_section", default: false
+    t.boolean "has_cinema_section", default: false
+    t.boolean "has_theatre_section", default: false
+    t.boolean "has_sport_section", default: false
+    t.boolean "has_international_section", default: false
+    t.boolean "has_european_section", default: false
+    t.boolean "has_agricole_section", default: false
+    t.boolean "has_military_section", default: false
+    t.boolean "has_metiers_section", default: false
+    t.boolean "has_post_bac_sections", default: false
+    t.boolean "is_educ_priority_zone", default: false
+    t.integer "students_number"
+    t.string "onisep_view"
+    t.string "main_photo"
+    t.string "logo"
+    t.string "photo1"
+    t.string "photo2"
+    t.string "photo3"
+    t.string "photo4"
+    t.string "photo5"
+    t.string "photo6"
+    t.string "video1"
+    t.string "video2"
+    t.string "description_etablissement"
     t.index ["school_id"], name: "index_colleges_on_school_id"
   end
 
