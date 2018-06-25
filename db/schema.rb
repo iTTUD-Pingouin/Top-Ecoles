@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_24_163618) do
+ActiveRecord::Schema.define(version: 2018_06_25_084739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,14 +31,14 @@ ActiveRecord::Schema.define(version: 2018_06_24_163618) do
     t.integer "rating"
     t.string "name"
     t.integer "cp"
-    t.integer "code_commune"
+    t.string "code_commune"
     t.string "departement"
-    t.integer "code_departement"
+    t.string "code_departement"
     t.string "academie"
     t.string "region"
     t.integer "latitude"
     t.integer "longitude"
-    t.integer "telephone"
+    t.string "telephone"
     t.string "website"
     t.boolean "has_restauration", default: false
     t.boolean "has_hebergement", default: false
@@ -69,21 +69,21 @@ ActiveRecord::Schema.define(version: 2018_06_24_163618) do
     t.string "video1"
     t.string "video2"
     t.string "description_etablissement"
-    t.integer "succes_rate_2015"
-    t.integer "succes_rate_without_mention_2015"
-    t.integer "succes_rate_AB_mention_2015"
-    t.integer "succes_rate_B_mention_2015"
-    t.integer "succes_rate_TB_mention_2015"
-    t.integer "succes_rate_2016"
-    t.integer "succes_rate_without_mention_2016"
-    t.integer "succes_rate_AB_mention_2016"
-    t.integer "succes_rate_B_mention_2016"
-    t.integer "succes_rate_TB_mention_2016"
-    t.integer "succes_rate_2017"
-    t.integer "succes_rate_without_mention_2017"
-    t.integer "succes_rate_AB_mention_2017"
-    t.integer "succes_rate_B_mention_2017"
-    t.integer "succes_rate_TB_mention_2017"
+    t.float "succes_rate_2015"
+    t.float "succes_rate_without_mention_2015"
+    t.float "succes_rate_AB_mention_2015"
+    t.float "succes_rate_B_mention_2015"
+    t.float "succes_rate_TB_mention_2015"
+    t.float "succes_rate_2016"
+    t.float "succes_rate_without_mention_2016"
+    t.float "succes_rate_AB_mention_2016"
+    t.float "succes_rate_B_mention_2016"
+    t.float "succes_rate_TB_mention_2016"
+    t.float "succes_rate_2017"
+    t.float "succes_rate_without_mention_2017"
+    t.float "succes_rate_AB_mention_2017"
+    t.float "succes_rate_B_mention_2017"
+    t.float "succes_rate_TB_mention_2017"
     t.index ["school_id"], name: "index_colleges_on_school_id"
   end
 
@@ -99,6 +99,22 @@ ActiveRecord::Schema.define(version: 2018_06_24_163618) do
     t.string "serie"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "fullname"
+    t.float "succes_rate_2015"
+    t.float "succes_rate_without_mention_2015"
+    t.float "succes_rate_AB_mention_2015"
+    t.float "succes_rate_B_mention_2015"
+    t.float "succes_rate_TB_mention_2015"
+    t.float "succes_rate_2016"
+    t.float "succes_rate_without_mention_2016"
+    t.float "succes_rate_AB_mention_2016"
+    t.float "succes_rate_B_mention_2016"
+    t.float "succes_rate_TB_mention_2016"
+    t.float "succes_rate_2017"
+    t.float "succes_rate_without_mention_2017"
+    t.float "succes_rate_AB_mention_2017"
+    t.float "succes_rate_B_mention_2017"
+    t.float "succes_rate_TB_mention_2017"
     t.index ["lycee_id"], name: "index_filieres_on_lycee_id"
   end
 
@@ -116,14 +132,14 @@ ActiveRecord::Schema.define(version: 2018_06_24_163618) do
     t.integer "rating"
     t.string "name"
     t.integer "cp"
-    t.integer "code_commune"
+    t.string "code_commune"
     t.string "departement"
-    t.integer "code_departement"
+    t.string "code_departement"
     t.string "academie"
     t.string "region"
     t.integer "latitude"
     t.integer "longitude"
-    t.integer "telephone"
+    t.string "telephone"
     t.string "website"
     t.boolean "has_general_way", default: false
     t.boolean "has_techno_way", default: false
